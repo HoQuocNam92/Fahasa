@@ -1,0 +1,74 @@
+[
+    {
+        "id" : "1",
+        "img" :"image/product1.webp",
+        "name":"Hoa Học Trò - Số 1459 - Bạn Có Hẹn Với Anh Trai HURRYKNG,WEANLÊ Và CAPTAIN BOY!",
+        "price":"20.000 đ",
+        "stock" : "Sắp hết"
+    },
+    {
+        "id" : "2",
+        "img" :"image/product2.webp",
+        "name":"Búp Sen Xanh - Bìa Cứng - Tặng Kèm Obi + Postcard Hành Trình Cứu Nước - Độc Quyền Fahasa",
+        "price":"110.000 đ",
+        "stock" : "Sắp hết"
+    },
+    {
+        "id" : "3",
+        "img" :"image/product3.webp",
+        "name":"Cánh Chim Bất Tử - Câu Chuyện Về Người Phi Công Huyền Thoại Nguyễn Văn Bảy - Bìa Cứng - Bản Giới Hạn -Tặng Kèm 1 Bookmark 2 Mặt + 4 Postcard 2 Mặt + 1 Quyển Sách Ảnh Bỏ Túi + 1 Đai Sách - Độc Quyền Fahasa",
+        "price":"136.000 đ",
+        "stock" : "Đã bán 134"
+    },
+    {
+        "id" : "4",
+        "img" :"image/product4.webp",
+        "name":"Manifest - 7 Bước Để Thay Đổi Cuộc Đời Bạn Mãi Mãi - Bìa Cứng - Tặng Kèm Móc Khóa Ngẫu Nhiên + Lời Chúc Và Chữ Ký Tác Giả Dành Riêng Cho Độc Giả Việt Nam - Độc Quyền Fahasa",
+        "price":"109.000 đ",
+        "stock" : "Đã bán 46"
+    },
+    {
+        "id" : "5",
+        "img" :"image/product5.webp",
+        "name":"Life BRE A2-B1 - Student's Book With Code Spark (2nd Edition)",
+        "price":"246.000 đ",
+         "stock" : "Sắp hết"
+    },
+    {
+        "id" : "6",
+        "img" :"image/product6.webp",
+        "name":"Đồ Chơi Mô Hình Sưu Tầm Minecraft 1.65 Inch - Nano Metalfigs Blind Bag - Jada Toys (Bao Bìa Giao Ngẫu Nhiên) (Mẫu Sản Phẩm Bên Trong Là Ngẫu Nhiên)",
+        "price":"59.000 đ",
+        "stock" : "Đã bán 3"
+    },
+    {
+        "id" : "7",
+        "img" :"image/product7.webp",
+        "name":" Mô Hình Pop Mart - Skullpanda The Mirage Series Figures",
+        "price":"380.000 đ",
+         "stock" : "Đã bán 0"
+    },
+    {
+        "id" : "8",
+        "img" :"image/product8.webp",
+        "name":"Ba Lô Fancy Du Hành Vũ Trụ - Clever Hippo BS1236/BLUE",
+        "price":"863.000 đ",
+         "stock" : "Đã bán 7"
+    },
+    {
+        "id" : "9",
+        "img" :"image/product9.webp",
+        "name":"Look Back (Tái Bản) - Tặng Kèm Set 2 Postcard",
+        "price":"61.500 đ",
+        "stock" : "Đã bán 583"
+    },
+    {
+        "id" : "10",
+        "img" :"image/product10.webp",
+        "name":"Hoàng Tử Bé (Song Ngữ Việt-Anh)",
+        "price":"55.300 đ",
+         "stock" : "Sắp hết"
+    }
+      
+    
+]
