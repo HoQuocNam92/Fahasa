@@ -1,4 +1,3 @@
-const prevBtn =  document.querySelector('#prev')
 const nextBtn =  document.querySelector('#next')
 const slides =  document.querySelector('.slides')
 
@@ -37,10 +36,7 @@ fetch('data.json')
 
 
 
-prevBtn.addEventListener('click',function() {
-    slides.style.transform = 'translateX(0)'
-})
-
+ 
 nextBtn.addEventListener('click',function() {
     slides.style.transform = 'translateX(-100%)'
 })

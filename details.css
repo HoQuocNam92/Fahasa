@@ -3,15 +3,15 @@ body {
 
 }
 
-.wrapper {
+.main {
     background-color: #F0F0F0;
-
 
 }
 
 .breadcumb {
     display: flex;
     list-style: none;
+    font-size: 14px;
 }
 
 .breadcumb li {
@@ -25,17 +25,15 @@ body {
 
 .product-section {
     display: flex;
-    overflow: visible;
+    position: relative;
+    padding-bottom: 16px;
 }
-
-.product-section .product-left {
-    width: 500px;
-}
-
 
 .product-details .product-left {
     width: 500px;
-
+    height: 754px;
+    position: sticky;
+    top: 16px;
 }
 
 .left-top {
