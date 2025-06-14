@@ -15,11 +15,12 @@ fetch('data.json')
         for(let i = 0 ; i<data.length;i++){
           if(data[i].name.toLowerCase().includes(keyword)){
               const item = document.createElement('div');
-              const text = document.createElement('div');
+              const text = document.createElement('a');
               const img = document.createElement('img');
               item.classList.add('item');
               text.classList.add('text');
               text.textContent = data[i].name;
+              text.href=`details.html?id=${data[i].id}`
               img.src = data[i].img;
               item.appendChild(img);
               item.appendChild(text);

@@ -36,6 +36,4 @@ fetch('header.html')
      
     })
     .catch(error => console.error('Lỗi khi fetch header:', error));
-
-
  
