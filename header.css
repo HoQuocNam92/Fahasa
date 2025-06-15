@@ -38,6 +38,13 @@
     height: 40px;
     padding-left: 8px;
     outline: none;
+    border: 1px solid #000;
+    transition: all 0.7s ease-in-out;
+}
+
+.search input:focus {
+    border: 1px solid #80bdff;
+
 }
 
 .dropdown {
@@ -56,10 +63,12 @@
     height: 60px;
 }
 
+
+
 .dropdown .item {
     display: flex;
     padding: 0 8px;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     align-items: center;
     gap: 20px;
 }

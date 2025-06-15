@@ -9,7 +9,6 @@ fetch('data.json')
 .then((res)=>res.json())
 .then((data)=>{
     const product = data.find((item)=>(item.id == id));
-    console.log("Check product",product)
     price.textContent = product.price;
     name.textContent = product.name;
     img.src = product.img;

@@ -40,4 +40,3 @@ fetch('data.json')
 nextBtn.addEventListener('click',function() {
     slides.style.transform = 'translateX(-100%)'
 })
-console.log("Check arr",arr)

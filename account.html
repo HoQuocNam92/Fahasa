@@ -11,32 +11,53 @@
 <body>
     <div class="account">
         <div class="overlay">
-
         </div>
         <div class="account-section">
             <div class="title">
-                <span>Đăng nhập</span>
-                <span>Đăng ký</span>
+                <span class="loginBtn active">Đăng nhập</span>
+                <span class="registerBtn">Đăng ký</span>
             </div>
-            <div class="form">
-                <div class="form-input">
-                    <label for="Email">Email</label>
-                    <input type="text" name="Email" id="Email">
-                    <label class="errorEmail">Email không đúng</label>
+            <div class="form-section login-form active">
+                <div class="form">
+                    <div class="form-input">
+                        <label>Email</label>
+                        <input type="text" class="email" placeholder="Nhập email">
+                    </div>
+                    <div class="form-input password">
+                        <label>Mật khẩu</label>
+                        <input type="password" class="password" placeholder="Nhập mật khẩu">
+                        <span class="show">Hiện</span>
+                    </div>
+                    <div class="btn">
+                        <button onclick="Login()" class="login"><a href="#">Đăng nhập</a></button>
+                        <button class="skip"><a href="index.html">Bỏ qua</a></button>
+                    </div>
+                </div>
+            </div>
 
-                </div>
-                <div class="form-input password">
-                    <label for="Password">Mật khẩu</label>
-                    <input type="password" name="Password" id="Password">
-                    <label class="errorPassword">Mật khẩu không đúng</label>
-                    <span class="show">Hiện</span>
-                </div>
-                <div class="forgot-password">
-                    <a href="#">Quên mật khẩu</a>
-                </div>
-                <div class="btn">
-                    <button class="login"><a href="#">Đăng nhập</a></button>
-                    <button class="skip"><a href="index.html">Bỏ qua</a></button>
+            <div class="form-section register-form">
+                <div class="form">
+                    <div class="form-input">
+                        <label>Email</label>
+                        <input type="text" class="email" placeholder="Nhập email">
+                        <label class="errorEmail">Email không hợp lệ</label>
+                    </div>
+                    <div class="form-input">
+                        <label>Tên tài khoản</label>
+                        <input type="text" class="username" placeholder="Nhập tên tài khoản">
+                        <label class="errorName">Tên tài khoản không hợp lệ</label>
+
+                    </div>
+                    <div class="form-input password">
+                        <label>Mật khẩu</label>
+                        <input type="password" class="password" placeholder="Nhập mật khẩu">
+                        <label class="errorPassword">Mật khẩu không hợp lệ</label>
+                        <span class="show">Hiện</span>
+                    </div>
+                    <div class="btn">
+                        <button onclick="Register()" class="register"><a href="#">Đăng ký</a></button>
+                        <button class="skip"><a href="account.html">Đăng nhập</a></button>
+                    </div>
                 </div>
             </div>
         </div>

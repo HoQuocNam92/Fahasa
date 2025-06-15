@@ -19,23 +19,56 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    text-align: center
+    text-align: center;
+    cursor: pointer;
 }
 
-.title span:first-child {
-    color: #C92127;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #C92127;
-}
+
 
 .title span {
+    position: relative;
+    padding-bottom: 8px;
     display: block;
 }
+
+
+
+.title span::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    transform-origin: center;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    background-color: #C92127;
+    transition: all 0.3s ease-in-out;
+}
+
+.title span:hover::after {
+    transform: scaleX(1);
+
+}
+
+.title span.active {
+    color: #C92127;
+
+}
+
+.title span.active::after {
+    transform: scaleX(1);
+
+
+}
+
+
 
 .form {
     margin-top: 8px;
 }
 
+.form .errorName,
 .form .errorPassword,
 .form .errorEmail {
     color: #C92127;
@@ -55,6 +88,12 @@
     padding: 8px 0 8px 8px;
     width: 100%;
     border-radius: 6px;
+    transition: all 0.15s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.form input:focus {
+    border: 2px solid #80bdff !important;
 }
 
 .password {
@@ -107,6 +146,11 @@
     display: block;
 }
 
+.login {
+    display: none;
+}
+
+.btn .register a,
 .btn .login a {
     text-decoration: none;
     color: #000;
@@ -130,9 +174,17 @@
 }
 
 
+.active {
+    display: block !important;
+}
 
+.login-form {
+    display: none;
+}
 
-
+.register-form {
+    display: none;
+}
 
 
 
