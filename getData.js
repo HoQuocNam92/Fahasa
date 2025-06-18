@@ -1,16 +1,16 @@
- 
 
- const productList = document.querySelector('.products');
 
-fetch('data.json')
+const productList = document.querySelector('.products');
+
+fetch('http://localhost:3000/products')
   .then(res => res.json())
   .then(data => {
     data.forEach(item => {
 
-       const div = document.createElement('div');
-       div.classList.add('product');
-       div.innerHTML =
-       `
+      const div = document.createElement('div');
+      div.classList.add('product');
+      div.innerHTML =
+        `
         <div class="product__comming">
         <span>Sắp Có Hàng</span> </div>  
         <a href="details.html?id=${item.id}">
@@ -20,7 +20,7 @@ fetch('data.json')
         <span class="info-name">${item.name} </span>
         </div>
         </a>
-        <p class="price">${item.price} </p>
+        <p class="price">${Number(item.price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </p>
         <div class="text-progress-bar">
         <div class="text-progress">
         <p>

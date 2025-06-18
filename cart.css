@@ -177,13 +177,12 @@ body {
 }
 
 .quantity span span:first-child {
-    padding-left: 16px;
-    padding-right: 8px;
+    padding: 16px;
 }
 
 .quantity span span:last-child {
-    padding-left: 8px;
-    padding-right: 16px;
+    padding: 16px;
+
 }
 
 .quantity span span:not(:last-child, :first-child) {
