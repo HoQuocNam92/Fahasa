@@ -14,17 +14,17 @@ fetch('http://localhost:3000/products')
         <div class="product__comming">
         <span>Sắp Có Hàng</span> </div>  
         <a href="details.html?id=${item.id}">
-        <img src="${item.img}" class="info-image" alt=""> 
+        <img src="${item.image}" class="info-image" alt=""> 
         <div class="product__info">
         <img src="image/ico_trending.svg" alt="">
-        <span class="info-name">${item.name} </span>
+        <span class="info-name">${item.tensp} </span>
         </div>
         </a>
-        <p class="price">${Number(item.price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </p>
+        <p class="price">${Number(item.gia).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </p>
         <div class="text-progress-bar">
         <div class="text-progress">
         <p>
-        ${item.stock}
+        ${item.soluong}
         </p>
         </div>
         </div>

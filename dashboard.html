@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="wrapper">
+        <div class="sidebar">
+            <a class="logo" href="index.html">
+                <img src="image/logo.webp" alt="">
+            </a>
+            <ul class="sidebar__menu">
+                <li class="list-option active" data-target="tab-dashboard">
+                    <i class="sidebar__icon fas fa-tachometer-alt"></i>
+                    Bảng điều khiển
+                </li>
+                <li class="list-option" data-target="tab-employees"><i class="fas fa-user-tie sidebar__icon"></i>Nhân
+                    viên</li>
+                <li class="list-option" data-target="tab-products"><i class="fas fa-box-open sidebar__icon"></i>Sản
+                    phẩm</li>
+                <li class="list-option" data-target="tab-customers"><i class="fas fa-user sidebar__icon"></i>Khách
+                    hàng</li>
+                <li class="list-option" data-target="tab-orders"><i class="fas fa-shopping-cart sidebar__icon"></i>Đơn
+                    hàng</li>
+                <li class="list-option" data-target="tab-revenue"><i class="fas fa-chart-line sidebar__icon"></i>Doanh
+                    thu</li>
+                <li class="list-option" data-target="tab-calendar"><i class="fas fa-calendar-alt sidebar__icon"></i>Lịch
+                    công tác</li>
+                <li class="list-option" data-target="tab-salary"><i
+                        class="fas fa-money-bill-wave sidebar__icon"></i>Bảng lương</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div id="tab-overview" class="tab-content active">
+                Đây là tổng quan
+            </div>
+            <div id="tab-employees" class="tab-content  ">
+                <h2>Danh sách nhân viên</h2>
+                <div class="content">
+                    <div class="option">
+                        <div onclick="handleOpen('nhanvien')">Tạo mới</div>
+                        <div>Tải file</div>
+                        <div>In dữ liệu</div>
+                        <div>Sao chép</div>
+                        <div>Xuất Excel</div>
+                        <div>Xuất PDF</div>
+                        <div>Xóa tất cả</div>
+                    </div>
+                    <table class="table-details">
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã nhân viên</th>
+                            <th>Họ và tên</th>
+                            <th>Ảnh thẻ</th>
+                            <th>Email</th>
+                            <th>Ngày sinh</th>
+                            <th>Số điện thoại</th>
+                            <th>Giới tính</th>
+                            <th>Chức vụ</th>
+                            <th>Phòng ban</th>
+                            <th>Ngày vào làm</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-products" class="tab-content">
+                <h2>Danh sách sản phẩm</h2>
+                <div class="content">
+
+
+                    <div class="option">
+                        <div onclick="handleOpen('sanpham')">Tạo mới</div>
+                        <div>Tải file</div>
+                        <div>In dữ liệu</div>
+                        <div>Sao chép</div>
+                        <div>Xuất Excel</div>
+                        <div>Xuất PDF</div>
+                        <div>Xóa tất cả</div>
+                    </div>
+                    <table class="table-details">
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ảnh sản phẩm</th>
+                            <th>Mô tả</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Danh mục</th>
+                            <th>Nhà cung cấp</th>
+                            <th>Ngày tạo</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-customers" class="tab-content">
+                <h2>Danh sách khách hàng</h2>
+                <div class="content">
+
+
+                    <div class="option">
+                        <div onclick="handleOpen('khachhang')">Tạo mới</div>
+                        <div>Tải file</div>
+                        <div>In dữ liệu</div>
+                        <div>Sao chép</div>
+                        <div>Xuất Excel</div>
+                        <div>Xuất PDF</div>
+                        <div>Xóa tất cả</div>
+                    </div>
+                    <table class="table-details">
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã KH</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Điện thoại</th>
+                            <th>Giới tính</th>
+                            <th>Địa chỉ</th>
+                            <th>Ngày đăng ký</th>
+                            <th>Trạng thái</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-orders" class="tab-content">
+                <h2>Danh sách đơn hàng</h2>
+                <div class="content">
+
+
+                    <div class="option">
+                        <div onclick="handleOpen('donhang')">Tạo mới</div>
+                        <div>Tải file</div>
+                        <div>In dữ liệu</div>
+                        <div>Sao chép</div>
+                        <div>Xuất Excel</div>
+                        <div>Xuất PDF</div>
+                        <div>Xóa tất cả</div>
+                    </div>
+                    <table class="table-details">
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã ĐH</th>
+                            <th>Khách hàng</th>
+                            <th>Nhân viên</th>
+                            <th>Ngày đặt</th>
+                            <th>Ngày Giao</th>
+                            <th>Địa chi</th>
+                            <th>Trạng thái</th>
+                            <th>Tổng tiền</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-revenue" class="tab-content">
+                <h2>Báo cáo doanh thu</h2>
+                <div class="content">
+
+                    <div class="option">
+                        <div onclick="handleOpen('doanhthu')">Tạo mới</div>
+                        <div>Tải file</div>
+                        <div>In dữ liệu</div>
+                        <div>Sao chép</div>
+                        <div>Xuất Excel</div>
+                        <div>Xuất PDF</div>
+                        <div>Xóa tất cả</div>
+                    </div>
+                    <table class="table-details">
+                        <tr>
+                            <th>STT</th>
+                            <th>Tháng/Năm</th>
+                            <th>Đơn hàng</th>
+                            <th>Doanh thu</th>
+                            <th>Lợi nhuận</th>
+                            <th>Chi phí</th>
+                            <th>Tỷ suất</th>
+                            <th>Chi tiết</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-calendar" class="tab-content">
+                <h2>Lịch công tác</h2>
+                <div class="content">
+
+                    <div class="option">
+                        <div onclick="handleOpen('lichtrinh')">Tạo mới</div>
+                        <div>Tải file</div>
+                        <div>In dữ liệu</div>
+                        <div>Sao chép</div>
+                        <div>Xuất Excel</div>
+                        <div>Xuất PDF</div>
+                        <div>Xóa tất cả</div>
+                    </div>
+                    <table class="table-details">
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã lịch trình</th>
+                            <th>Tiêu đề</th>
+                            <th>Nhân viên</th>
+                            <th>Bắt đầu</th>
+                            <th>Kết thúc</th>
+                            <th>Địa điểm</th>
+                            <th>Ghi chú</th>
+                            <th>Trạng thái</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-salary" class="tab-content">
+                <h2>Bảng lương</h2>
+                <div class="content">
+
+                    <div class="option">
+                        <div onclick="handleOpen('luong')">Tạo mới</div>
+                        <div>Tải file</div>
+                        <div>In dữ liệu</div>
+                        <div>Sao chép</div>
+                        <div>Xuất Excel</div>
+                        <div>Xuất PDF</div>
+                        <div>Xóa tất cả</div>
+                    </div>
+                    <table class="table-details">
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã NV</th>
+                            <th>Họ tên</th>
+                            <th>Chức vụ</th>
+                            <th>Tháng</th>
+                            <th>Lương CB</th>
+                            <th>Phụ cấp</th>
+                            <th>Thưởng</th>
+                            <th>Khấu trừ</th>
+                            <th>Thực nhận</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="overlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Popup -->
+
+
+
+        <div id="popup" class="popup">
+            <!-- Form Nhân viên -->
+            <div class="form-group" data-type="nhanvien">
+                <span class="close" onclick="closePopup('nhanvien')">&times;</span>
+                <h2>Thêm nhân viên</h2>
+                <form>
+                    <label>Mã nhân viên:</label>
+                    <input type="text" id="manv">
+                    <label>Họ và tên:</label>
+                    <input type="text" id="name">
+                    <label>Ảnh thẻ:</label>
+                    <input type="text" id="avatar">
+                    <label>Email:</label>
+                    <input type="email" id="email">
+                    <label>Ngày sinh:</label>
+                    <input type="date" id="dob">
+                    <label>Số điện thoại:</label>
+                    <input type="text" id="phone">
+                    <label>Giới tính:</label>
+                    <input type="text" id="gender">
+                    <label>Chức vụ:</label>
+                    <input type="text" id="role">
+                    <label>Phòng ban:</label>
+                    <input type="text" id="phongban">
+                    <label>Ngày vào làm:</label>
+                    <input type="date" id="ngayvaolam">
+                    <input type="hidden" id="edit-id">
+                    <button type="button" id="submitBtn">Lưu</button>
+                </form>
+            </div>
+
+            <!-- Form Sản phẩm -->
+            <div class="form-group" data-type="sanpham">
+                <span class="close" onclick="closePopup('sanpham')">&times;</span>
+                <h2>Thêm sản phẩm</h2>
+                <form>
+                    <label>Mã sản phẩm:</label>
+                    <input type="text" id="masp">
+                    <label>Tên sản phẩm:</label>
+                    <input type="text" id="tensp">
+                    <label>Ảnh:</label>
+                    <input type="text" id="image">
+                    <label>Mô tả:</label>
+                    <input type="text" id="mota">
+                    <label>Giá:</label>
+                    <input type="number" id="gia">
+                    <label>Số lượng:</label>
+                    <input type="number" id="soluong">
+                    <label>Nhà cung cấp:</label>
+                    <input type="text" id="nhacc">
+                    <label>Danh mục:</label>
+                    <input type="text" id="danhmuc">
+                    <label>Ngày tạo:</label>
+                    <input type="date" id="ngaytao">
+                    <input type="hidden" id="edit-product-id">
+                    <button type="button">Lưu</button>
+                </form>
+            </div>
+
+            <!-- Form Khách hàng -->
+            <div class="form-group" data-type="khachhang">
+                <span class="close" onclick="closePopup('khachhang')">&times;</span>
+                <h2>Thêm khách hàng</h2>
+                <form>
+                    <label>Mã khách hàng:</label>
+                    <input type="text" id="makh">
+                    <label>Họ và tên:</label>
+                    <input type="text" id="hoten">
+                    <label>Email:</label>
+                    <input type="email" id="email">
+                    <label>Số điện thoại:</label>
+                    <input type="text" id="sdt">
+                    <label>Giới tính:</label>
+                    <input type="text" id="gioitinh">
+                    <label>Địa chỉ:</label>
+                    <input type="text" id="diachi">
+                    <label>Ngày đăng ký:</label>
+                    <input type="date" id="ngaydangky">
+                    <label>Trạng thái:</label>
+                    <input type="text" id="trangthai">
+                    <input type="hidden" id="edit-customer-id">
+                    <button type="button">Lưu</button>
+                </form>
+            </div>
+
+            <!-- Form Đơn hàng -->
+            <div class="form-group" data-type="donhang">
+                <span class="close" onclick="closePopup('donhang')">&times;</span>
+                <h2>Thêm đơn hàng</h2>
+                <form>
+                    <label>Mã đơn hàng:</label>
+                    <input type="text" id="madh">
+                    <label>Khách hàng:</label>
+                    <input type="text" id="khachhang">
+                    <label>Nhân viên xử lý:</label>
+                    <input type="text" id="nhanvien">
+                    <label>Ngày đặt:</label>
+                    <input type="date" id="ngaydat">
+                    <label>Ngày giao:</label>
+                    <input type="date" id="ngaygiao">
+                    <label>Địa chỉ giao:</label>
+                    <input type="text" id="diachigiaohang">
+                    <label>Tổng tiền:</label>
+                    <input type="text" id="tongtien">
+                    <label>Trạng thái:</label>
+                    <input type="text" id="trangthai">
+                    <input type="hidden" id="edit-order-id">
+                    <button type="button">Lưu</button>
+                </form>
+            </div>
+
+            <!-- Form Doanh thu -->
+            <div class="form-group" data-type="doanhthu">
+                <span class="close" onclick="closePopup('doanhthu')">&times;</span>
+                <h2>Thêm doanh thu</h2>
+                <form>
+                    <label>Tháng/Năm:</label>
+                    <input type="text" id="thoigian">
+                    <label>Tổng đơn hàng:</label>
+                    <input type="number" id="tongdon">
+                    <label>Tổng doanh thu:</label>
+                    <input type="text" id="tongdoanhthu">
+                    <label>Lợi nhuận:</label>
+                    <input type="text" id="loinhuan">
+                    <label>Chi phí:</label>
+                    <input type="text" id="chiphi">
+                    <label>Tỷ suất:</label>
+                    <input type="text" id="tysuat">
+                    <label>Chi tiết:</label>
+                    <input type="text" id="chitiet">
+                    <input type="hidden" id="edit-revenue-id">
+                    <button type="button">Lưu</button>
+                </form>
+            </div>
+
+            <!-- Form Lịch trình -->
+            <div class="form-group" data-type="lichtrinh">
+                <span class="close" onclick="closePopup('lichtrinh')">&times;</span>
+                <h2>Thêm lịch trình</h2>
+                <form>
+                    <label>Mã lịch trình:</label>
+                    <input type="text" id="malt">
+                    <label>Tiêu đề:</label>
+                    <input type="text" id="tieude">
+                    <label>Nhân viên:</label>
+                    <input type="text" id="nhanvien">
+                    <label>Ngày bắt đầu:</label>
+                    <input type="date" id="ngaybatdau">
+                    <label>Ngày kết thúc:</label>
+                    <input type="date" id="ngayketthuc">
+                    <label>Địa điểm:</label>
+                    <input type="text" id="diadiem">
+                    <label>Ghi chú:</label>
+                    <input type="text" id="ghichu">
+                    <label>Trạng thái:</label>
+                    <input type="text" id="trangthai">
+                    <input type="hidden" id="edit-task-id">
+                    <button type="button">Lưu</button>
+                </form>
+            </div>
+
+            <!-- Form Lương -->
+            <div class="form-group" data-type="luong">
+                <span class="close" onclick="closePopup('luong')">&times;</span>
+                <h2>Thêm lương</h2>
+                <form>
+                    <label>Mã nhân viên:</label>
+                    <input type="text" id="manv">
+                    <label>Họ tên:</label>
+                    <input type="text" id="hoten">
+                    <label>Chức vụ:</label>
+                    <input type="text" id="chucvu">
+                    <label>Tháng:</label>
+                    <input type="text" id="thang">
+                    <label>Lương cơ bản:</label>
+                    <input type="text" id="luongcoban">
+                    <label>Phụ cấp:</label>
+                    <input type="text" id="phucap">
+                    <label>Thưởng:</label>
+                    <input type="text" id="thuong">
+                    <label>Khấu trừ:</label>
+                    <input type="text" id="khautru">
+                    <label>Thực nhận:</label>
+                    <input type="text" id="thucnhan">
+                    <input type="hidden" id="edit-salary-id">
+                    <button type="button">Lưu</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

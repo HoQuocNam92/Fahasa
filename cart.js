@@ -2,6 +2,9 @@
 
 
 const content = document.querySelector('.content');
+const total = document.querySelector('.total')
+const totalCheckout = document.querySelector('.checkout-total')
+
 
 
 function renderCart() {
@@ -21,25 +24,22 @@ function renderCart() {
                             <div class="cart-info">
                                 <a href="details.html?id=${item.id}" class="info-name">${item.name}</a>
                                 <div class="info-price">
-                                   ${Number(item.price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+                                   ${Number(item.gia).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
                                 </div>
                             </div>
                             <div class="quantity">
                                 <span>
                                     <span onclick ="decrease(${item.id})">
-                                        <a href="#" >
-                                            <img src="https://cdn1.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_minus2x.png"
-                                                alt="">
-                                        </a>
+                                        
+                                           <i class="fa-solid fa-minus"></i>
+                                         
+                                       
                                     </span>
                                     <span>
                                         <input name="quantity" type="text" minvalue="1" value="${item.quantity}">
                                     </span>
                                     <span onclick ="increase(${item.id})">
-                                        <a href="#" >
-                                            <img src="https://cdn1.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_plus2x.png"
-                                                alt="">
-                                        </a>
+                                          <i class="fa-solid fa-plus"></i>
                                     </span>
                                 </span>
                             </div>
@@ -59,19 +59,26 @@ function increase(id) {
     let cart = JSON.parse(localStorage.getItem('cart'));
     let cartFind = cart.find((item) => item.id == String(id));
     cartFind.quantity += 1;
+    cartFind.sum = Number(cartFind.gia) * cartFind.quantity;
     localStorage.setItem('cart', JSON.stringify(cart));
+    document.querySelector(`#cart-${id} .price`).textContent = cartFind.sum.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
+    document.querySelector(`#cart-${id} .quantity input`).value = cartFind.quantity
+    totalCart();
 }
 function decrease(id) {
     let cart = JSON.parse(localStorage.getItem('cart'));
     let cartFind = cart.find((item) => item.id == String(id));
-    console.log("Check quantity", cartFind.quantity)
+
     if (cartFind.quantity === 1) {
         deleteProuct(id);
         return;
     }
     cartFind.quantity -= 1;
+    cartFind.sum = Number(cartFind.gia) * cartFind.quantity;
     localStorage.setItem('cart', JSON.stringify(cart));
-
+    document.querySelector(`#cart-${id} .price`).textContent = cartFind.sum.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })
+    document.querySelector(`#cart-${id} .quantity input`).value = cartFind.quantity
+    totalCart()
 }
 
 
@@ -83,6 +90,7 @@ function deleteProuct(id) {
     localStorage.removeItem('cart')
     localStorage.setItem('cart', JSON.stringify(cartFilter));
     alert('Xóa sản phẩm thành công !!')
+    totalCart()
 }
 
 
@@ -90,20 +98,20 @@ function addToCart() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    fetch('data.json')
+    fetch('http://localhost:3000/products')
         .then(res => res.json())
         .then((data) => {
             let product = data.find((item) => (
                 item.id === id
             ))
             product.quantity = 1;
-            product.sum = Number(product.price) * product.quantity;
+            product.sum = Number(product.gia) * product.quantity;
 
             let productExists = cart.find((item) => (item.id === id));
 
             if (productExists) {
                 productExists.quantity = productExists.quantity + 1;
-                productExists.sum = Number(productExists.price) * productExists.quantity;
+                productExists.sum = Number(productExists.gia) * productExists.quantity;
 
             }
             else {
@@ -117,7 +125,18 @@ function addToCart() {
             alert('Thêm sản phẩm thành công')
             renderCart();
         })
+    totalCart()
 }
 
 
+function totalCart() {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    console.log("Check cart", cart)
+    let totalCart = cart.reduce((total, item) => (total + (Number(item.gia) * item.quantity)), 0);
+    total.textContent = totalCart.toLocaleString('vi-VN', { style: "currency", currency: "VND" })
+    totalCheckout.textContent = totalCart.toLocaleString('vi-VN', { style: "currency", currency: "VND" })
+}
+
+
+totalCart();
 renderCart();

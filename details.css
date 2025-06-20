@@ -64,7 +64,14 @@ body {
 
 .btn button:last-child {
     background-color: rgb(201, 33, 39);
+
+}
+
+.btn button:last-child a {
+    text-decoration: none;
+    display: block;
     color: #FFF;
+    padding: 10px 0;
 }
 
 .top-image {

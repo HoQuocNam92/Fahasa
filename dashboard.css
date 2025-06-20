@@ -4,16 +4,18 @@ body {
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    gap: 0;
+    position: relative;
 }
 
 .sidebar {
-    height: calc(100vh - 32px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
     background-color: #fff;
     border-radius: 6px;
-    margin: 16px;
+
 }
 
 .sidebar .logo img {
@@ -25,6 +27,12 @@ body {
     list-style: none;
     padding: 16px;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #000;
+    color: #fff;
 
 }
 
@@ -37,6 +45,11 @@ body {
 
 
 
+.sidebar .active {
+    background-color: #000;
+    color: #FFF;
+
+}
 
 
 
@@ -45,18 +58,31 @@ body {
 /* main-content */
 
 .main-content {
-    margin: 0 16px;
+    margin-right: 16px;
+    margin-left: 316px;
+    width: calc(100% - 316px);
+
 }
 
 
 
-/* Customers */
+/* tab-content */
 
-.customers .option {
+.tab-content {
+    display: none;
+}
+
+.active {
+    display: block !important;
+}
+
+.tab-content .option {
     display: flex;
+
 }
 
-.customers h2 {
+.product h2,
+.tab-content h2 {
     background-color: #fff;
     padding: 16px;
     margin: 16px 0;
@@ -70,7 +96,7 @@ body {
 
 }
 
-.customers .option div {
+.tab-content .option div {
     padding: 8px;
     background-color: #000;
     color: #fff;
@@ -79,43 +105,43 @@ body {
     cursor: pointer;
 }
 
-.customers .option div:nth-of-type(1) {
+.tab-content .option div:nth-of-type(1) {
     background-color: rgb(33, 150, 243);
 }
 
-.customers .option div:nth-of-type(2) {
+.tab-content .option div:nth-of-type(2) {
     background-color: rgb(76, 175, 80);
 }
 
-.customers .option div:nth-of-type(3) {
+.tab-content .option div:nth-of-type(3) {
     background-color: rgb(255, 152, 0);
 }
 
-.customers .option div:nth-of-type(4) {
+.tab-content .option div:nth-of-type(4) {
     background-color: rgb(156, 39, 176);
 }
 
-.customers .option div:nth-of-type(5) {
+.tab-content .option div:nth-of-type(5) {
     background-color: rgb(244, 67, 54);
 }
 
-.customers .option div:nth-of-type(6) {
+.tab-content .option div:nth-of-type(6) {
     background-color: rgb(158, 158, 158);
 }
 
-.customers .option div:nth-of-type(7) {
+.tab-content .option div:nth-of-type(7) {
     background-color: rgb(0, 188, 212);
 }
 
 
-.customers .option div:hover {
+.tab-content .option div:hover {
     opacity: 0.7;
 }
 
 
 
 
-.customers .option div:first-child {
+.tab-content .option div:first-child {
     margin-left: 0;
 
 }
@@ -174,31 +200,32 @@ table i:last-child {
 
 
 
-
-
-.popup {
-    display: none;
+#overlay {
     position: fixed;
-    z-index: 1000;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
 }
+
+.popup {}
+
 
 .popup #form-title {
     margin: 16px 0;
 }
 
-.popup-content {
-    background-color: white;
-    margin: auto;
-    padding: 20px;
-    width: 400px;
-    border-radius: 10px;
-    position: relative;
+.form-group {
+    background-color: #fff;
+    position: fixed;
+    z-index: 1000;
+    min-height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 16px;
+    border-radius: 6px;
+    display: none;
 }
 
 .close {

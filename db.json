@@ -1,54 +1,272 @@
 {
-  "customers": [],
+  "employees": [
+    {
+      "id": 1,
+      "manv": "NV001",
+      "name": "Nguyễn Văn A",
+      "avatar": "img/avt1.jpg",
+      "email": "a.nguyen@gmail.com",
+      "dob": "1990-01-01",
+      "gender": "Nam",
+      "phone": "0901234567",
+      "role": "Nhân viên bán hàng",
+      "phongban": "Bán lẻ",
+      "ngayvaolam": "2020-05-01"
+    },
+    {
+      "id": 2,
+      "manv": "NV002",
+      "name": "Trần Thị B",
+      "avatar": "img/avt2.jpg",
+      "email": "b.tran@gmail.com",
+      "dob": "1992-03-15",
+      "gender": "Nữ",
+      "phone": "0934567890",
+      "role": "Quản lý kho",
+      "phongban": "Kho",
+      "ngayvaolam": "2019-08-10"
+    }
+  ],
   "products": [
     {
       "id": "1",
-      "img": "image/product1.webp",
-      "name": "Hoa Học Trò - Số 1459 - Bạn Có Hẹn Với Anh Trai HURRYKNG,WEANLÊ Và CAPTAIN BOY!",
-      "price": "20000",
-      "stock": "Sắp hết"
+      "masp": "SP001",
+      "tensp": "Hoa Học Trò - Số 1459 - Bạn Có Hẹn Với Anh Trai HURRYKNG,WEANLÊ Và CAPTAIN BOY!",
+      "image": "image/product1.webp",
+      "mota": "Tạp chí tuổi teen nổi tiếng",
+      "gia": "20000",
+      "soluong": "Sắp hết",
+      "danhmuc": "Tạp chí",
+      "nhacc": "Fahasa",
+      "ngaytao": "2024-05-01"
     },
     {
       "id": "2",
-      "img": "image/product2.webp",
-      "name": "Búp Sen Xanh - Bìa Cứng - Tặng Kèm Obi + Postcard Hành Trình Cứu Nước - Độc Quyền Fahasa",
-      "price": "110000",
-      "stock": "Sắp hết"
+      "masp": "SP002",
+      "tensp": "Búp Sen Xanh - Bìa Cứng - Tặng Kèm Obi + Postcard",
+      "image": "image/product2.webp",
+      "mota": "Tiểu sử Chủ tịch Hồ Chí Minh",
+      "gia": "110000",
+      "soluong": "Sắp hết",
+      "danhmuc": "Sách lịch sử",
+      "nhacc": "NXB Trẻ",
+      "ngaytao": "2024-04-15"
     },
     {
       "id": "3",
-      "img": "image/product3.webp",
-      "name": "Cánh Chim Bất Tử - Câu Chuyện Về Người Phi Công Huyền Thoại Nguyễn Văn Bảy - Bìa Cứng - Bản Giới Hạn -Tặng Kèm 1 Bookmark 2 Mặt + 4 Postcard 2 Mặt + 1 Quyển Sách Ảnh Bỏ Túi + 1 Đai Sách - Độc Quyền Fahasa",
-      "price": "136000",
-      "stock": "Đã bán 134"
+      "masp": "SP003",
+      "tensp": "Cánh Chim Bất Tử - Nguyễn Văn Bảy",
+      "image": "image/product3.webp",
+      "mota": "Câu chuyện người phi công huyền thoại",
+      "gia": "136000",
+      "soluong": "Đã bán 134",
+      "danhmuc": "Sách truyền cảm hứng",
+      "nhacc": "NXB Tổng hợp",
+      "ngaytao": "2024-03-20"
     },
     {
       "id": "4",
-      "img": "image/product4.webp",
-      "name": "Manifest - 7 Bước Để Thay Đổi Cuộc Đời Bạn Mãi Mãi - Bìa Cứng - Tặng Kèm Móc Khóa Ngẫu Nhiên + Lời Chúc Và Chữ Ký Tác Giả Dành Riêng Cho Độc Giả Việt Nam - Độc Quyền Fahasa",
-      "price": "109000",
-      "stock": "Đã bán 46"
+      "masp": "SP004",
+      "tensp": "Manifest - 7 Bước Để Thay Đổi Cuộc Đời",
+      "image": "image/product4.webp",
+      "mota": "Phát triển bản thân và động lực sống",
+      "gia": "109000",
+      "soluong": "Đã bán 46",
+      "danhmuc": "Sách kỹ năng",
+      "nhacc": "NXB Kim Đồng",
+      "ngaytao": "2024-06-10"
     },
     {
       "id": "5",
-      "img": "image/product5.webp",
-      "name": "Life BRE A2-B1 - Student's Book With Code Spark (2nd Edition)",
-      "price": "246000",
-      "stock": "Sắp hết"
+      "masp": "SP005",
+      "tensp": "Life BRE A2-B1 - Student's Book",
+      "image": "image/product5.webp",
+      "mota": "Giáo trình tiếng Anh cơ bản",
+      "gia": "246000",
+      "soluong": "Sắp hết",
+      "danhmuc": "Giáo trình",
+      "nhacc": "National Geographic",
+      "ngaytao": "2024-05-28"
     },
     {
       "id": "6",
-      "img": "image/product6.webp",
-      "name": "Đồ Chơi Mô Hình Sưu Tầm Minecraft 1.65 Inch - Nano Metalfigs Blind Bag - Jada Toys (Bao Bìa Giao Ngẫu Nhiên) (Mẫu Sản Phẩm Bên Trong Là Ngẫu Nhiên)",
-      "price": "59000",
-      "stock": "Đã bán 3"
+      "masp": "SP006",
+      "tensp": "Đồ Chơi Minecraft - Nano Metalfigs",
+      "image": "image/product6.webp",
+      "mota": "Mô hình Minecraft sưu tầm",
+      "gia": "59000",
+      "soluong": "Đã bán 3",
+      "danhmuc": "Đồ chơi",
+      "nhacc": "Jada Toys",
+      "ngaytao": "2024-05-01"
     },
     {
       "id": "7",
-      "img": "image/product7.webp",
-      "name": " Mô Hình Pop Mart - Skullpanda The Mirage Series Figures",
-      "price": "380000",
-      "stock": "Đã bán 0"
+      "masp": "SP007",
+      "tensp": "Pop Mart - Skullpanda The Mirage",
+      "image": "image/product7.webp",
+      "mota": "Mô hình phiên bản giới hạn",
+      "gia": "380000",
+      "soluong": "Đã bán 0",
+      "danhmuc": "Đồ chơi mô hình",
+      "nhacc": "Pop Mart",
+      "ngaytao": "2024-06-01"
+    },
+    {
+      "id": "8",
+      "masp": "SP008",
+      "tensp": "Ba Lô Fancy Du Hành Vũ Trụ",
+      "image": "image/product8.webp",
+      "mota": "Ba lô Clever Hippo BS1236/BLUE",
+      "gia": "815000",
+      "soluong": "Đã bán 99",
+      "danhmuc": "Ba lô",
+      "nhacc": "Clever Hippo",
+      "ngaytao": "2024-05-18"
+    },
+    {
+      "id": "9",
+      "masp": "SP009",
+      "tensp": "Pop Mart - Skullpanda The Mirage (Ver2)",
+      "image": "image/product9.webp",
+      "mota": "Phiên bản 2 của dòng mô hình Skullpanda",
+      "gia": "412000",
+      "soluong": "Đã bán 0",
+      "danhmuc": "Mô hình",
+      "nhacc": "Pop Mart",
+      "ngaytao": "2024-06-05"
+    },
+    {
+      "id": "10",
+      "masp": "SP010",
+      "tensp": "Hoàng Tử Bé (Song Ngữ Việt-Anh)",
+      "image": "image/product10.webp",
+      "mota": "Tác phẩm kinh điển song ngữ",
+      "gia": "55300",
+      "soluong": "Đã bán 13",
+      "danhmuc": "Văn học thiếu nhi",
+      "nhacc": "NXB Kim Đồng",
+      "ngaytao": "2024-04-22"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "makh": "KH001",
+      "hoten": "Lê Minh Dũng",
+      "email": "dung.le@gmail.com",
+      "sdt": "0912345678",
+      "gioitinh": "Nam",
+      "diachi": "123 Nguyễn Trãi, Q1, TP.HCM",
+      "ngaydangky": "2024-11-10",
+      "trangthai": "Hoạt động"
+    },
+    {
+      "id": 2,
+      "makh": "KH002",
+      "hoten": "Phạm Thị Hoa",
+      "email": "hoa.pham@gmail.com",
+      "sdt": "0987654321",
+      "gioitinh": "Nữ",
+      "diachi": "45 Hoàng Văn Thụ, Hà Nội",
+      "ngaydangky": "2024-12-05",
+      "trangthai": "Tạm khóa"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "madh": "DH001",
+      "khachhang": "Lê Minh Dũng",
+      "nhanvien": "Nguyễn Văn A",
+      "ngaydat": "2025-06-01",
+      "ngaygiao": "2025-06-03",
+      "diachigiaohang": "123 Nguyễn Trãi, Q1, TP.HCM",
+      "tongtien": 250000,
+      "trangthai": "Chờ giao hàng"
+    },
+    {
+      "id": 2,
+      "madh": "DH002",
+      "khachhang": "Phạm Thị Hoa",
+      "nhanvien": "Trần Thị B",
+      "ngaydat": "2025-06-03",
+      "ngaygiao": "2025-06-05",
+      "diachigiaohang": "45 Hoàng Văn Thụ, Hà Nội",
+      "tongtien": 85000,
+      "trangthai": "Đã giao"
+    }
+  ],
+  "salary": [
+    {
+      "id": 1,
+      "manv": "NV001",
+      "hoten": "Nguyễn Văn A",
+      "chucvu": "Bán hàng",
+      "thang": "05/2025",
+      "luongcoban": 7000000,
+      "phucap": 500000,
+      "thuong": 1000000,
+      "khautru": 300000,
+      "thucnhan": 8200000
+    },
+    {
+      "id": 2,
+      "manv": "NV002",
+      "hoten": "Trần Thị B",
+      "chucvu": "Quản lý kho",
+      "thang": "05/2025",
+      "luongcoban": 8500000,
+      "phucap": 600000,
+      "thuong": 0,
+      "khautru": 200000,
+      "thucnhan": 8900000
+    }
+  ],
+  "revenues": [
+    {
+      "id": 1,
+      "thoigian": "05/2025",
+      "tongdon": 150,
+      "tongdoanhthu": 45000000,
+      "loinhuan": 12000000,
+      "chiphi": 8000000,
+      "tysuat": "26.6%",
+      "chitiet": "Chi tiết tháng 5"
+    },
+    {
+      "id": 2,
+      "thoigian": "06/2025",
+      "tongdon": 175,
+      "tongdoanhthu": 56000000,
+      "loinhuan": 15000000,
+      "chiphi": 9000000,
+      "tysuat": "26.7%",
+      "chitiet": "Chi tiết tháng 6"
+    }
+  ],
+  "calendar": [
+    {
+      "id": 1,
+      "malt": "LT001",
+      "tieude": "Giao hàng Hà Nội",
+      "nhanvien": "Trần Thị B",
+      "ngaybatdau": "2025-06-20",
+      "ngayketthuc": "2025-06-22",
+      "diadiem": "Hà Nội",
+      "ghichu": "Giao sách cho đại lý",
+      "trangthai": "Chưa thực hiện"
+    },
+    {
+      "id": 2,
+      "malt": "LT002",
+      "tieude": "Họp phòng kinh doanh",
+      "nhanvien": "Nguyễn Văn A",
+      "ngaybatdau": "2025-06-23",
+      "ngayketthuc": "2025-06-23",
+      "diadiem": "Văn phòng HCM",
+      "ghichu": "Báo cáo quý 2",
+      "trangthai": "Đã xong"
     }
   ]
 }
