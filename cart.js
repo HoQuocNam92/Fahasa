@@ -10,6 +10,8 @@ const totalCheckout = document.querySelector('.checkout-total')
 function renderCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.forEach((item) => {
+        console.log(item)
+
         const div = document.createElement('div');
         div.classList.add('content-cart');
         div.id = `cart-${item.id}`;
@@ -19,10 +21,10 @@ function renderCart() {
                                 <input type="checkbox" name="checkbox">
                             </div>
                             <a href="details.html?id=${item.id}" class="cart-image">
-                                <img src="${item.img}" alt="">
+                                <img src="${item.image[0]}" alt="">
                             </a>
                             <div class="cart-info">
-                                <a href="details.html?id=${item.id}" class="info-name">${item.name}</a>
+                                <a href="details.html?id=${item.id}" class="info-name">${item.tensp}</a>
                                 <div class="info-price">
                                    ${Number(item.gia).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
                                 </div>
@@ -94,44 +96,42 @@ function deleteProuct(id) {
 }
 
 
-function addToCart() {
+async function addToCart() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    fetch('http://localhost:3000/products')
-        .then(res => res.json())
-        .then((data) => {
-            let product = data.find((item) => (
-                item.id === id
-            ))
-            product.quantity = 1;
-            product.sum = Number(product.gia) * product.quantity;
+    const res = await fetch('http://localhost:3000/products');
+    const data = await res.json();
+    let product = data.find((item) => (
+        item.id === id
+    ))
+    product.quantity = 1;
+    product.sum = Number(product.gia) * product.quantity;
 
-            let productExists = cart.find((item) => (item.id === id));
+    let productExists = cart.find((item) => (item.id === id));
 
-            if (productExists) {
-                productExists.quantity = productExists.quantity + 1;
-                productExists.sum = Number(productExists.gia) * productExists.quantity;
+    if (productExists) {
+        productExists.quantity = productExists.quantity + 1;
+        productExists.sum = Number(productExists.gia) * productExists.quantity;
 
-            }
-            else {
-                cart.push(product);
-            }
+    }
+    else {
+        cart.push(product);
+    }
 
-            product.total = cart.reduce((total, item) => total + item.sum, 0);
-            console.log("check product", product.total)
-
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert('Thêm sản phẩm thành công')
-            renderCart();
-        })
-    totalCart()
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Thêm sản phẩm thành công')
 }
-
-
+async function buyNow() {
+    try {
+        await addToCart();
+        window.location.href = 'cart.html';
+    } catch (err) {
+        alert("Lỗi khi thêm giỏ hàng: " + err.message);
+    }
+}
 function totalCart() {
     let cart = JSON.parse(localStorage.getItem('cart'));
-    console.log("Check cart", cart)
     let totalCart = cart.reduce((total, item) => (total + (Number(item.gia) * item.quantity)), 0);
     total.textContent = totalCart.toLocaleString('vi-VN', { style: "currency", currency: "VND" })
     totalCheckout.textContent = totalCart.toLocaleString('vi-VN', { style: "currency", currency: "VND" })
@@ -140,3 +140,6 @@ function totalCart() {
 
 totalCart();
 renderCart();
+
+
+

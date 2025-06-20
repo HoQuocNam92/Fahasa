@@ -13,7 +13,7 @@ fetch('http://localhost:3000/products')
             div.innerHTML =
                 `
          <a href="details.html?id=${item.id}">
-                            <img src="${item.image}" class="info-image" alt="">
+                            <img src="${item.image[0]}" class="info-image" alt="">
                             <div class="item__info">
                                 <span class="info-name">${item.tensp}</span>
                             </div>

@@ -96,7 +96,8 @@ body {
     height: 82px;
     cursor: pointer;
     transition: all 0.1s ease-out;
-
+    margin: 0 2px;
+    object-fit: cover;
 }
 
 

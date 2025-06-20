@@ -32,7 +32,13 @@
       "id": "1",
       "masp": "SP001",
       "tensp": "Hoa Học Trò - Số 1459 - Bạn Có Hẹn Với Anh Trai HURRYKNG,WEANLÊ Và CAPTAIN BOY!",
-      "image": "image/product1.webp",
+      "image": [
+        "image/product1.webp",
+        "image/product1-1.webp",
+        "image/product1-2.webp",
+        "image/product1-3.webp",
+        "image/product1-4.webp"
+      ],
       "mota": "Tạp chí tuổi teen nổi tiếng",
       "gia": "20000",
       "soluong": "Sắp hết",
@@ -44,7 +50,13 @@
       "id": "2",
       "masp": "SP002",
       "tensp": "Búp Sen Xanh - Bìa Cứng - Tặng Kèm Obi + Postcard",
-      "image": "image/product2.webp",
+      "image": [
+        "image/product2.webp",
+        "image/product2-1.webp",
+        "image/product2-2.webp",
+        "image/product2-3.webp",
+        "image/product2-4.webp"
+      ],
       "mota": "Tiểu sử Chủ tịch Hồ Chí Minh",
       "gia": "110000",
       "soluong": "Sắp hết",
@@ -56,7 +68,13 @@
       "id": "3",
       "masp": "SP003",
       "tensp": "Cánh Chim Bất Tử - Nguyễn Văn Bảy",
-      "image": "image/product3.webp",
+      "image": [
+        "image/product3.webp",
+        "image/product3-1.webp",
+        "image/product3-2.webp",
+        "image/product3-3.webp",
+        "image/product3-4.webp"
+      ],
       "mota": "Câu chuyện người phi công huyền thoại",
       "gia": "136000",
       "soluong": "Đã bán 134",
@@ -68,7 +86,13 @@
       "id": "4",
       "masp": "SP004",
       "tensp": "Manifest - 7 Bước Để Thay Đổi Cuộc Đời",
-      "image": "image/product4.webp",
+      "image": [
+        "image/product4.webp",
+        "image/product4-1.webp",
+        "image/product4-2.webp",
+        "image/product4-3.webp",
+        "image/product4-4.webp"
+      ],
       "mota": "Phát triển bản thân và động lực sống",
       "gia": "109000",
       "soluong": "Đã bán 46",
@@ -80,7 +104,13 @@
       "id": "5",
       "masp": "SP005",
       "tensp": "Life BRE A2-B1 - Student's Book",
-      "image": "image/product5.webp",
+      "image": [
+        "image/product5.webp",
+        "image/product5-1.webp",
+        "image/product5-2.webp",
+        "image/product5-3.webp",
+        "image/product5-4.webp"
+      ],
       "mota": "Giáo trình tiếng Anh cơ bản",
       "gia": "246000",
       "soluong": "Sắp hết",
@@ -92,7 +122,13 @@
       "id": "6",
       "masp": "SP006",
       "tensp": "Đồ Chơi Minecraft - Nano Metalfigs",
-      "image": "image/product6.webp",
+      "image": [
+        "image/product6.webp",
+        "image/product6-1.webp",
+        "image/product6-2.webp",
+        "image/product6-3.webp",
+        "image/product6-4.webp"
+      ],
       "mota": "Mô hình Minecraft sưu tầm",
       "gia": "59000",
       "soluong": "Đã bán 3",
@@ -104,7 +140,13 @@
       "id": "7",
       "masp": "SP007",
       "tensp": "Pop Mart - Skullpanda The Mirage",
-      "image": "image/product7.webp",
+      "image": [
+        "image/product7.webp",
+        "image/product7-1.webp",
+        "image/product7-2.webp",
+        "image/product7-3.webp",
+        "image/product7-4.webp"
+      ],
       "mota": "Mô hình phiên bản giới hạn",
       "gia": "380000",
       "soluong": "Đã bán 0",
@@ -116,7 +158,13 @@
       "id": "8",
       "masp": "SP008",
       "tensp": "Ba Lô Fancy Du Hành Vũ Trụ",
-      "image": "image/product8.webp",
+      "image": [
+        "image/product8.webp",
+        "image/product8-1.webp",
+        "image/product8-2.webp",
+        "image/product8-3.webp",
+        "image/product8-4.webp"
+      ],
       "mota": "Ba lô Clever Hippo BS1236/BLUE",
       "gia": "815000",
       "soluong": "Đã bán 99",
@@ -128,7 +176,13 @@
       "id": "9",
       "masp": "SP009",
       "tensp": "Pop Mart - Skullpanda The Mirage (Ver2)",
-      "image": "image/product9.webp",
+      "image": [
+        "image/product9.webp",
+        "image/product9-1.webp",
+        "image/product9-2.webp",
+        "image/product9-3.webp",
+        "image/product9-4.webp"
+      ],
       "mota": "Phiên bản 2 của dòng mô hình Skullpanda",
       "gia": "412000",
       "soluong": "Đã bán 0",
@@ -140,7 +194,13 @@
       "id": "10",
       "masp": "SP010",
       "tensp": "Hoàng Tử Bé (Song Ngữ Việt-Anh)",
-      "image": "image/product10.webp",
+      "image": [
+        "image/product10.webp",
+        "image/product10-1.webp",
+        "image/product10-2.webp",
+        "image/product10-3.webp",
+        "image/product10-4.webp"
+      ],
       "mota": "Tác phẩm kinh điển song ngữ",
       "gia": "55300",
       "soluong": "Đã bán 13",

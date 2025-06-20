@@ -14,7 +14,7 @@ fetch('http://localhost:3000/products')
         <div class="product__comming">
         <span>Sắp Có Hàng</span> </div>  
         <a href="details.html?id=${item.id}">
-        <img src="${item.image}" class="info-image" alt=""> 
+        <img src="${item.image[0]}" class="info-image" alt=""> 
         <div class="product__info">
         <img src="image/ico_trending.svg" alt="">
         <span class="info-name">${item.tensp} </span>
