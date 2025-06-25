@@ -1,6 +1,6 @@
 const search = document.querySelector('#search');
 const dropdown = document.querySelector('.dropdown');
-
+const searchBtn = document.querySelector('.fa-magnifying-glass');
 
 
 let data = [];
@@ -10,7 +10,6 @@ let data = [];
 async function fetchAPI() {
   const res = await fetch('http://localhost:3000/sanpham');
   data.push(...await res.json())
-  console.log("data", data)
 
 }
 
@@ -28,6 +27,7 @@ function searchs() {
 
     for (let i = 0; i < data.length; i++) {
       if (data[i].tensp.toLowerCase().includes(keyword)) {
+
         const item = document.createElement('div');
         const text = document.createElement('a');
         const img = document.createElement('img');
@@ -44,28 +44,37 @@ function searchs() {
         }
         dropdown.appendChild(item);
       }
-      dropdown.style.display = 'block'
     }
+    dropdown.style.display = 'block'
+
   })
 
 }
 searchs()
 
-function reSearchs() {
-
-  const keyword = search.value.trim().toLowerCase();
+function searchInput() {
+  const keyword = search.value.toLowerCase().trim();
+  console.log(keyword)
   if (!keyword) {
     alert('Vui lòng không để trống ô tìm kiếm');
     return;
   }
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].tensp.toLowerCase().includes(keyword)) {
-      window.location.href = "filterProduct.html"
-      return;
-    }
-    else {
-      alert('Không tìm thấy sản phẩm');
-      return;
-    }
+  const foundProduct = data.find(product =>
+    product.tensp.toLowerCase().includes(keyword)
+  );
+
+  if (foundProduct) {
+    localStorage.setItem('filteredProduct', JSON.stringify(foundProduct));
+    window.location.href = 'filterProduct.html';
+  } else {
+    alert('Không tìm thấy sản phẩm');
   }
+
 }
+
+searchBtn.addEventListener('click', searchInput)
+search.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    searchInput()
+  }
+});

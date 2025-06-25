@@ -13,7 +13,12 @@ async function filterProduct() {
 }
 filterProduct();
 
-
+async function fetchAPI() {
+    const res = await fetch('http://localhost:3000/sanpham');
+    const data = await res.json();
+    return data
+}
+fetchAPI()
 checkBoxs.forEach((checkbox) => {
     checkbox.addEventListener('input', () => {
         if (checkbox.checked) {
@@ -33,32 +38,25 @@ checkBoxs.forEach((checkbox) => {
 
 })
 
-async function filterProducts(value) {
 
-    if (value === -1) {
-        mainContent.style.display = 'block';
-        mainContent2.style.display = 'none'
-        mainContentProduct.innerHTML = '';
+async function renderProducts(data) {
 
-        return;
+    let setData = []
+    const local = JSON.parse(localStorage.getItem('filteredProduct'))
+    if (local) {
+        setData.push(local);
+        localStorage.removeItem('filteredProduct')
+
     }
-    mainContentProduct.innerHTML = '';
-    const res = await fetch('http://localhost:3000/sanpham');
-    const data = await res.json();
+    else {
+        setData.push(...data)
+    }
 
-    const [min, max] = value.split(' - ');
-    let filterGia = [];
-    console.log(filterGia)
-
-    filterGia = data.filter((item) =>
-        Number(item.gia) >= Number(min) && Number(item.gia) <= Number(max)
-    )
+    console.log("Cehck da", setData)
     mainContent.style.display = 'none';
     mainContent2.style.display = 'block';
-    if (filterGia.length > 0) {
-
-
-        filterGia.forEach(item => {
+    if (setData.length > 0) {
+        setData.forEach(item => {
             const div = document.createElement('div');
 
             div.classList.add('product');
@@ -88,5 +86,30 @@ async function filterProducts(value) {
     else {
         mainContentProduct.textContent = 'Không có sản phẩm'
     }
+}
+const data = await fetchAPI()
+renderProducts(data);
+
+
+async function filterProducts(value) {
+    const data = await fetchAPI();
+
+    console.log("Check value", value)
+    if (value === -1) {
+        mainContent.style.display = 'block';
+        mainContent2.style.display = 'none'
+        mainContentProduct.innerHTML = '';
+        return;
+    }
+    mainContentProduct.innerHTML = '';
+
+    const [min, max] = value.split(' - ');
+
+    const filterGia = data.filter((item) =>
+        Number(item.gia) >= Number(min) && Number(item.gia) <= Number(max)
+    )
+    console.log("Check filterGia", filterGia)
+    renderProducts(filterGia);
 
 }
+

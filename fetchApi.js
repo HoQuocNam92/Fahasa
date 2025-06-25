@@ -3,6 +3,7 @@ fetch('header.html')
     .then(html => {
         document.getElementById('header').innerHTML = html;
         const script = document.createElement('script');
+        script.type = 'module';
         script.src = 'search.js';
         document.body.appendChild(script);
 
@@ -17,6 +18,8 @@ fetch('introduce.html')
     .then(html => {
         document.getElementById('slider').innerHTML = html;
         const script = document.createElement('script');
+        script.type = 'module';
+
         script.src = 'introduce.js';
         document.body.appendChild(script);
 
@@ -31,6 +34,8 @@ fetch('footer.html')
     .then(html => {
         document.getElementById('footer').innerHTML = html;
         const script = document.createElement('script');
+        script.type = 'module';
+
         script.src = 'footer.js';
         document.body.appendChild(script);
 
@@ -44,6 +49,8 @@ fetch('products.html')
     .then(html => {
         document.querySelector('#products').innerHTML = html;
         const script = document.createElement('script');
+        script.type = 'module';
+
         script.src = 'products.js';
         document.body.appendChild(script);
 
