@@ -11,7 +11,7 @@ const id = urlParams.get('id')
 
 
 const getData = async () => {
-    const res = await fetch('http://localhost:3000/products');
+    const res = await fetch('http://localhost:3000/sanpham');
     const data = await res.json();
     const product = data.find((item) => (item.id === id));
     price.textContent = Number(product.gia).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });

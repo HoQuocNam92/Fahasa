@@ -3,6 +3,10 @@ body {
 
 }
 
+#updateBtn {
+    display: none;
+}
+
 .wrapper {
     position: relative;
 }

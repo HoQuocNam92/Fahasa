@@ -100,7 +100,7 @@ async function addToCart() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const res = await fetch('http://localhost:3000/products');
+    const res = await fetch('http://localhost:3000/sanpham');
     const data = await res.json();
     let product = data.find((item) => (
         item.id === id

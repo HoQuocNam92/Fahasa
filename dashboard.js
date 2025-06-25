@@ -10,18 +10,18 @@ const calendar = document.querySelector('#tab-calendar .table-details');
 
 const listTable = document.querySelectorAll('.tab-content');
 const listOption = document.querySelectorAll('.list-option');
-const name = document.querySelector('#name')
-const avatar = document.querySelector('#avatar')
-const email = document.querySelector('#email')
-const dob = document.querySelector('#dob')
-const phone = document.querySelector('#phone')
-const role = document.querySelector('#role')
-const id = document.querySelector('#edit-id')
-const title = document.querySelector('#form-title')
+
 
 const openPopup = document.querySelector('.popup');
-const fetchDB = async (path = "employees") => {
-    const url = `http://localhost:3000/${path}`
+
+
+
+const urls = (path = "nhanvien") => {
+    return `http://localhost:3000/${path}`
+}
+
+const fetchDB = async (path) => {
+    const url = urls(path);
     const res = await fetch(url);
     const data = await res.json();
     return data;
@@ -29,9 +29,18 @@ const fetchDB = async (path = "employees") => {
 
 
 
-fetchDB("");
+fetchDB("nhanvien");
 
-
+const form = (type) => {
+    let obj = {}
+    const formWrapper = document.querySelector(`.form-group[data-type="${type}"]`);
+    const form = formWrapper.querySelector('form');
+    const values = form.querySelectorAll('input');
+    values.forEach((i) => {
+        obj[i.id] = i.value;
+    })
+    return obj;
+}
 
 const formatMoney = (data) => {
     return Number(data).toLocaleString('vi-VN', {
@@ -43,10 +52,10 @@ const formatMoney = (data) => {
 // Employees
 
 const getEmployees = async () => {
-    const data = await fetchDB("employees")
+    const data = await fetchDB("nhanvien")
     data.forEach((item) => {
         const tr = document.createElement('tr');
-        tr.id = `customers-${item.id}`
+        tr.id = `nhanvien-${item.id}`
         tr.innerHTML =
             `
                             <td>${item.id}</td>
@@ -61,9 +70,9 @@ const getEmployees = async () => {
                             <td>${item.phongban}</td>
                             <td>${item.ngayvaolam}</td>
                             <td>
-                            <i onclick="deleteCustomers('${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick="deleteCustomers('nhanvien','${item.id}')" class="fa-solid fa-trash"></i>
 
-                            <i onclick='openForm("nhanvien",${JSON.stringify(item)})'   class="fa-solid fa-pen">
+                            <i onclick='handleOpen("nhanvien",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
                             </td>
             `
@@ -80,7 +89,7 @@ getEmployees();
 
 // Products
 const getProducts = async () => {
-    const data = await fetchDB("products")
+    const data = await fetchDB("sanpham")
     data.forEach((item) => {
         const tr = document.createElement('tr');
         tr.id = `product-${item.id}`
@@ -117,8 +126,7 @@ getProducts();
 // Customers
 
 const getCustomer = async () => {
-    const data = await fetchDB("customers")
-
+    const data = await fetchDB("khachhang")
     data.forEach((item) => {
         const tr = document.createElement('tr');
         tr.id = `customer-${item.id}`
@@ -152,7 +160,7 @@ getCustomer()
 
 // Orders
 const getOrders = async () => {
-    const data = await fetchDB("orders")
+    const data = await fetchDB("donhang")
 
     data.forEach((item) => {
         const tr = document.createElement('tr');
@@ -188,7 +196,7 @@ getOrders();
 
 // Salary
 const getSalary = async () => {
-    const data = await fetchDB("salary")
+    const data = await fetchDB("luong")
 
     data.forEach((item) => {
         const tr = document.createElement('tr');
@@ -224,7 +232,7 @@ getSalary();
 
 
 const getRevenues = async () => {
-    const data = await fetchDB("revenues")
+    const data = await fetchDB("doanhthu")
 
     data.forEach((item) => {
         const tr = document.createElement('tr');
@@ -260,7 +268,7 @@ getRevenues();
 // Calendar
 
 const getCalendar = async () => {
-    const data = await fetchDB("calendar");
+    const data = await fetchDB("lichtrinh");
     data.forEach((item) => {
         const tr = document.createElement('tr');
         tr.id = `calendar-${item.id}`
@@ -291,23 +299,134 @@ getCalendar();
 
 
 
-
 //  
 
-function openForm(type, product) {
-    console.log("Check type ", product)
-    const formWrapper = document.querySelector(`.form-group[data-type="${type}"]`);
 
+
+
+const deleteCustomers = async (type, id) => {
+    const UrlNew = urls(type + '/' + String(id))
+    console.log("check UrlNew", UrlNew)
+    const option = {
+        method: "delete",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }
+    await fetch(UrlNew, option);
+    const deleteItem = document.querySelector(`#customers-${id}`);
+    deleteItem.remove();
+    alert('Xóa thành công')
+}
+
+const updateCustomer = async (type) => {
+    const formWrapper = document.querySelector(`.form-group[data-type="${type}"]`);
+    const forms = formWrapper.querySelector('form');
+    const id = forms.dataset.id;
+    const datas = form(type);
+    const UrlNew = urls(type + '/' + String(id))
+
+    await fetch(UrlNew, option("PUT", datas));
+}
+
+
+
+const createCustomer = async (type) => {
+    const data = form(type);
+    const url = urls(type);
+    const res = await fetch(url, option("POST", data));
+    const result = await res.json();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const openForm = (type) => {
+
+    document.querySelector('#overlay').style.display = 'block'
+    document.querySelectorAll('.form-group').forEach((item) => {
+        if (item.dataset.type === type) {
+            item.style.display = 'block'
+        }
+        else {
+            item.style.display = 'none'
+        }
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const handleOpen = (type, product) => {
+
+    openForm(type)
+
+    const formWrapper = document.querySelector(`.form-group[data-type="${type}"]`);
     const form = formWrapper.querySelector('form');
-    handleOpen(type);
-    for (let key in product) {
-        const input = form.querySelector(`#${key}`);
-        if (input) input.value = product[key];
+    if (!product) {
+        const values = form.querySelectorAll('input');
+        values.forEach((i) => {
+            i.value = "";
+        })
+        document.querySelector('#updateBtn').style.display = 'none'
+
+    }
+    else {
+        for (let key in product) {
+            const input = form.querySelector(`#${key}`);
+
+            if (input) input.value = product[key];
+        }
+        form.dataset.id = product.id;
+        document.querySelector('#submitBtn').style.display = 'none'
+        document.querySelector('#updateBtn').style.display = 'block'
     }
 
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function closePopup(type = "type") {
     document.querySelector('#overlay').style.display = 'none'
@@ -324,18 +443,6 @@ function closePopup(type = "type") {
 
 }
 
-const handleOpen = (type) => {
-    document.querySelector('#overlay').style.display = 'block'
-    document.querySelectorAll('.form-group').forEach((item) => {
-        if (item.dataset.type === type) {
-            item.style.display = 'block'
-        }
-        else {
-
-            item.style.display = 'none'
-        }
-    })
-}
 
 
 const option = (method, data) => {
@@ -351,37 +458,19 @@ const option = (method, data) => {
 
 
 
-const deleteCustomers = async (id) => {
-    const UrlNew = url + '/' + String(id);
-    console.log("check id", id)
-    const option = {
-        method: "delete",
-        headers: {
-            "Content-Type": "application/json",
-        }
-    }
-    await fetch(UrlNew, option);
-    const deleteItem = document.querySelector(`#customers-${id}`);
-    deleteItem.remove();
-}
-
-const updateCustomer = async () => {
-
-    const ids = id?.value;
-    const data = form();
-    const UrlNew = url + '/' + String(ids);
-    const res = await fetch(UrlNew, option("PUT", data));
-    console.log(res)
-}
 
 
 
-const createCustomer = async () => {
-    const data = form();
-    const res = await fetch(url, option("POST", data));
-    const result = await res.json();
-    console.log("Tạo mới thành công:", result);
-};
+
+
+
+
+
+
+
+
+
+
 
 
 

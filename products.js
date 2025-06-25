@@ -2,15 +2,15 @@
 
 const productList = document.querySelector('.products');
 
-fetch('http://localhost:3000/products')
-  .then(res => res.json())
-  .then(data => {
-    data.forEach(item => {
 
-      const div = document.createElement('div');
-      div.classList.add('product');
-      div.innerHTML =
-        `
+async function fetchAPI() {
+    const res = await fetch('http://localhost:3000/sanpham');
+    const data = await res.json();
+    data.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('product');
+        div.innerHTML =
+            `
         <div class="product__comming">
         <span>Sắp Có Hàng</span> </div>  
         <a href="details.html?id=${item.id}">
@@ -29,6 +29,8 @@ fetch('http://localhost:3000/products')
         </div>
         </div>
        `
-      productList.appendChild(div);
+        productList.appendChild(div);
     });
-  });
+}
+
+fetchAPI();

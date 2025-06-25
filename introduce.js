@@ -3,7 +3,7 @@ const slides = document.querySelector('.slides')
 
 let arr = []
 
-fetch('http://localhost:3000/products')
+fetch('http://localhost:3000/sanpham')
     .then((res) => res.json())
     .then((data) => {
         data.forEach((item) => {

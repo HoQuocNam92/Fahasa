@@ -41,10 +41,10 @@
         </div>
 
         <div class="main-content">
-            <div id="tab-overview" class="tab-content active">
+            <div id="tab-overview" class="tab-content ">
                 Đây là tổng quan
             </div>
-            <div id="tab-employees" class="tab-content  ">
+            <div id="tab-employees" class="tab-content active  ">
                 <h2>Danh sách nhân viên</h2>
                 <div class="content">
                     <div class="option">
@@ -273,7 +273,7 @@
         <div id="popup" class="popup">
             <!-- Form Nhân viên -->
             <div class="form-group" data-type="nhanvien">
-                <span class="close" onclick="closePopup('nhanvien')">&times;</span>
+                <span class="close" onclick="closeForm('nhanvien')">&times;</span>
                 <h2>Thêm nhân viên</h2>
                 <form>
                     <label>Mã nhân viên:</label>
@@ -297,7 +297,8 @@
                     <label>Ngày vào làm:</label>
                     <input type="date" id="ngayvaolam">
                     <input type="hidden" id="edit-id">
-                    <button type="button" id="submitBtn">Lưu</button>
+                    <button type="button" id="submitBtn" onclick="createCustomer('nhanvien')">Lưu</button>
+                    <button type="button" id="updateBtn" onclick="updateCustomer('nhanvien')">Cập nhật</button>
                 </form>
             </div>
 
@@ -325,7 +326,7 @@
                     <label>Ngày tạo:</label>
                     <input type="date" id="ngaytao">
                     <input type="hidden" id="edit-product-id">
-                    <button type="button">Lưu</button>
+                    <button type="button" onclick="createCustomer('sanpham')">Lưu</button>
                 </form>
             </div>
 

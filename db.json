@@ -1,33 +1,6 @@
 {
-  "employees": [
-    {
-      "id": 1,
-      "manv": "NV001",
-      "name": "Nguyễn Văn A",
-      "avatar": "img/avt1.jpg",
-      "email": "a.nguyen@gmail.com",
-      "dob": "1990-01-01",
-      "gender": "Nam",
-      "phone": "0901234567",
-      "role": "Nhân viên bán hàng",
-      "phongban": "Bán lẻ",
-      "ngayvaolam": "2020-05-01"
-    },
-    {
-      "id": 2,
-      "manv": "NV002",
-      "name": "Trần Thị B",
-      "avatar": "img/avt2.jpg",
-      "email": "b.tran@gmail.com",
-      "dob": "1992-03-15",
-      "gender": "Nữ",
-      "phone": "0934567890",
-      "role": "Quản lý kho",
-      "phongban": "Kho",
-      "ngayvaolam": "2019-08-10"
-    }
-  ],
-  "products": [
+  "nhanvien": [],
+  "sanpham": [
     {
       "id": "1",
       "masp": "SP001",
@@ -209,9 +182,9 @@
       "ngaytao": "2024-04-22"
     }
   ],
-  "customers": [
+  "khachhang": [
     {
-      "id": 1,
+      "id": "1",
       "makh": "KH001",
       "hoten": "Lê Minh Dũng",
       "email": "dung.le@gmail.com",
@@ -222,7 +195,7 @@
       "trangthai": "Hoạt động"
     },
     {
-      "id": 2,
+      "id": "2",
       "makh": "KH002",
       "hoten": "Phạm Thị Hoa",
       "email": "hoa.pham@gmail.com",
@@ -233,9 +206,9 @@
       "trangthai": "Tạm khóa"
     }
   ],
-  "orders": [
+  "donhang": [
     {
-      "id": 1,
+      "id": "1",
       "madh": "DH001",
       "khachhang": "Lê Minh Dũng",
       "nhanvien": "Nguyễn Văn A",
@@ -246,7 +219,7 @@
       "trangthai": "Chờ giao hàng"
     },
     {
-      "id": 2,
+      "id": "2",
       "madh": "DH002",
       "khachhang": "Phạm Thị Hoa",
       "nhanvien": "Trần Thị B",
@@ -257,9 +230,9 @@
       "trangthai": "Đã giao"
     }
   ],
-  "salary": [
+  "luong": [
     {
-      "id": 1,
+      "id": "1",
       "manv": "NV001",
       "hoten": "Nguyễn Văn A",
       "chucvu": "Bán hàng",
@@ -271,7 +244,7 @@
       "thucnhan": 8200000
     },
     {
-      "id": 2,
+      "id": "2",
       "manv": "NV002",
       "hoten": "Trần Thị B",
       "chucvu": "Quản lý kho",
@@ -283,9 +256,9 @@
       "thucnhan": 8900000
     }
   ],
-  "revenues": [
+  "doanhthu": [
     {
-      "id": 1,
+      "id": "1",
       "thoigian": "05/2025",
       "tongdon": 150,
       "tongdoanhthu": 45000000,
@@ -295,7 +268,7 @@
       "chitiet": "Chi tiết tháng 5"
     },
     {
-      "id": 2,
+      "id": "2",
       "thoigian": "06/2025",
       "tongdon": 175,
       "tongdoanhthu": 56000000,
@@ -305,9 +278,9 @@
       "chitiet": "Chi tiết tháng 6"
     }
   ],
-  "calendar": [
+  "lichtrinh": [
     {
-      "id": 1,
+      "id": "1",
       "malt": "LT001",
       "tieude": "Giao hàng Hà Nội",
       "nhanvien": "Trần Thị B",
@@ -318,7 +291,7 @@
       "trangthai": "Chưa thực hiện"
     },
     {
-      "id": 2,
+      "id": "2",
       "malt": "LT002",
       "tieude": "Họp phòng kinh doanh",
       "nhanvien": "Nguyễn Văn A",
