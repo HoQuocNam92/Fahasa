@@ -41,10 +41,10 @@
         </div>
 
         <div class="main-content">
-            <div id="tab-overview" class="tab-content ">
+            <div id="tab-overview" class="tab-content active  ">
                 Đây là tổng quan
             </div>
-            <div id="tab-employees" class="tab-content active  ">
+            <div id="tab-employees" class="tab-content   ">
                 <h2>Danh sách nhân viên</h2>
                 <div class="content">
                     <div class="option">
@@ -74,7 +74,7 @@
                     </table>
                 </div>
             </div>
-            <div id="tab-products" class="tab-content">
+            <div id="tab-products" class="tab-content ">
                 <h2>Danh sách sản phẩm</h2>
                 <div class="content">
 
@@ -274,7 +274,7 @@
             <!-- Form Nhân viên -->
             <div class="form-group" data-type="nhanvien">
                 <span class="close" onclick="closeForm('nhanvien')">&times;</span>
-                <h2>Thêm nhân viên</h2>
+                <h2 class="title"><span>Thêm</span> nhân viên</h2>
                 <form>
                     <label>Mã nhân viên:</label>
                     <input type="text" id="manv">
@@ -297,15 +297,15 @@
                     <label>Ngày vào làm:</label>
                     <input type="date" id="ngayvaolam">
                     <input type="hidden" id="edit-id">
-                    <button type="button" id="submitBtn" onclick="createCustomer('nhanvien')">Lưu</button>
-                    <button type="button" id="updateBtn" onclick="updateCustomer('nhanvien')">Cập nhật</button>
+                    <button type="button" class="submitBtn" onclick="createHandle('nhanvien')">Lưu</button>
+                    <button type="button" class="updateBtn" onclick="updateHandle('nhanvien')">Cập nhật</button>
                 </form>
             </div>
 
             <!-- Form Sản phẩm -->
             <div class="form-group" data-type="sanpham">
                 <span class="close" onclick="closePopup('sanpham')">&times;</span>
-                <h2>Thêm sản phẩm</h2>
+                <h2 class="title"><span>Thêm</span> sản phẩm</h2>
                 <form>
                     <label>Mã sản phẩm:</label>
                     <input type="text" id="masp">
@@ -326,14 +326,16 @@
                     <label>Ngày tạo:</label>
                     <input type="date" id="ngaytao">
                     <input type="hidden" id="edit-product-id">
-                    <button type="button" onclick="createCustomer('sanpham')">Lưu</button>
+                    <button type="button" class="submitBtn" onclick="createHandle('sanpham')">Lưu</button>
+                    <button type="button" class="updateBtn" onclick="updateHandle('sanpham')">Cập nhật</button>
+
                 </form>
             </div>
 
             <!-- Form Khách hàng -->
             <div class="form-group" data-type="khachhang">
                 <span class="close" onclick="closePopup('khachhang')">&times;</span>
-                <h2>Thêm khách hàng</h2>
+                <h2 class="title"><span>Thêm</span> khách hàng</h2>
                 <form>
                     <label>Mã khách hàng:</label>
                     <input type="text" id="makh">
@@ -352,14 +354,15 @@
                     <label>Trạng thái:</label>
                     <input type="text" id="trangthai">
                     <input type="hidden" id="edit-customer-id">
-                    <button type="button">Lưu</button>
+                    <button type="button" class="submitBtn" onclick="createHandle('khachhang')">Lưu</button>
+                    <button type="button" class="updateBtn" onclick="updateHandle('khachhang')">Cập nhật</button>
                 </form>
             </div>
 
             <!-- Form Đơn hàng -->
             <div class="form-group" data-type="donhang">
                 <span class="close" onclick="closePopup('donhang')">&times;</span>
-                <h2>Thêm đơn hàng</h2>
+                <h2 class="title"><span>Thêm</span> đơn hàng</h2>
                 <form>
                     <label>Mã đơn hàng:</label>
                     <input type="text" id="madh">
@@ -378,14 +381,15 @@
                     <label>Trạng thái:</label>
                     <input type="text" id="trangthai">
                     <input type="hidden" id="edit-order-id">
-                    <button type="button">Lưu</button>
+                    <button type="button" class="submitBtn" onclick="createHandle('donhang')">Lưu</button>
+                    <button type="button" class="updateBtn" onclick="updateHandle('donhang')">Cập nhật</button>
                 </form>
             </div>
 
             <!-- Form Doanh thu -->
             <div class="form-group" data-type="doanhthu">
                 <span class="close" onclick="closePopup('doanhthu')">&times;</span>
-                <h2>Thêm doanh thu</h2>
+                <h2 class="title"><span>Thêm</span> doanh thu</h2>
                 <form>
                     <label>Tháng/Năm:</label>
                     <input type="text" id="thoigian">
@@ -402,14 +406,15 @@
                     <label>Chi tiết:</label>
                     <input type="text" id="chitiet">
                     <input type="hidden" id="edit-revenue-id">
-                    <button type="button">Lưu</button>
+                    <button type="button" class="submitBtn" onclick="createHandle('doanhthu')">Lưu</button>
+                    <button type="button" class="updateBtn" onclick="updateHandle('doanhthu')">Cập nhật</button>
                 </form>
             </div>
 
             <!-- Form Lịch trình -->
             <div class="form-group" data-type="lichtrinh">
                 <span class="close" onclick="closePopup('lichtrinh')">&times;</span>
-                <h2>Thêm lịch trình</h2>
+                <h2 class="title"><span>Thêm</span> lịch trình</h2>
                 <form>
                     <label>Mã lịch trình:</label>
                     <input type="text" id="malt">
@@ -428,14 +433,15 @@
                     <label>Trạng thái:</label>
                     <input type="text" id="trangthai">
                     <input type="hidden" id="edit-task-id">
-                    <button type="button">Lưu</button>
+                    <button type="button" class="submitBtn" onclick="createHandle('lichtrinh')">Lưu</button>
+                    <button type="button" class="updateBtn" onclick="updateHandle('lichtrinh')">Cập nhật</button>
                 </form>
             </div>
 
             <!-- Form Lương -->
             <div class="form-group" data-type="luong">
                 <span class="close" onclick="closePopup('luong')">&times;</span>
-                <h2>Thêm lương</h2>
+                <h2 class="title"><span>Thêm</span> lương</h2>
                 <form>
                     <label>Mã nhân viên:</label>
                     <input type="text" id="manv">
@@ -456,7 +462,8 @@
                     <label>Thực nhận:</label>
                     <input type="text" id="thucnhan">
                     <input type="hidden" id="edit-salary-id">
-                    <button type="button">Lưu</button>
+                    <button type="button" class="submitBtn" onclick="createHandle('luong')">Lưu</button>
+                    <button type="button" class="updateBtn" onclick="updateHandle('luong')">Cập nhật</button>
                 </form>
             </div>
 

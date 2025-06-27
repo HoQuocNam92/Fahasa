@@ -38,7 +38,6 @@ registerBtn.onclick = function () {
 
 
 document.querySelectorAll('.form-input.password').forEach(wrapper => {
-    console.log("Check props", wrapper)
     const input = wrapper.querySelector('input.password');
     const toggle = wrapper.querySelector('.show');
 
@@ -51,8 +50,26 @@ document.querySelectorAll('.form-input.password').forEach(wrapper => {
 });
 
 
+const urls = () => {
+    return 'http://localhost:3000/nhanvien'
+}
+const fetchDB = async () => {
+    const res = await fetch('http://localhost:3000/nhanvien');
+    const data = await res.json();
+    return data;
+}
+const option = (method, data) => {
+    return {
+        method: method,
 
-function Register() {
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    };
+};
+
+async function Register() {
     let isValid = true;
     let isRole = false;
 
@@ -87,42 +104,44 @@ function Register() {
     }
 
     let data = {
-        email: email,
-        password: password
+        username,
+        email,
+        password,
+        role: 'viewer'
     }
-    let user = JSON.parse(localStorage.getItem('user')) || [];
-
-
-
-    if (user && user.some(item => item.email === email)) {
-        alert('Tài khoản của bạn đã tồn tại nhé !!')
-        return;
-    }
-
     if (username === 'admin') {
         data.role = 'admin';
         isRole = true;
     }
 
-    user.push(data);
-    localStorage.setItem('user', JSON.stringify(user));
+
+    const user = await fetchDB();
+    console.log("Check user", user)
+    if (user && user.some(item => item.email === email)) {
+        alert('Tài khoản của bạn đã tồn tại nhé !!')
+        return;
+    }
+
+    await fetch(urls(), option("POST", data));
+
+
     alert('Đăng ký thành công')
     window.location.href = 'account.html'
 
 
 }
 
-function Login() {
+async function Login() {
     const email = document.querySelector('.login-form input.email').value;
     const password = document.querySelector('.login-form input.password').value;
-    const userDb = JSON.parse(localStorage.getItem('user'));
+    const userDb = await fetchDB();
 
 
     let user = userDb.find((item) => (
         item.email === email && item.password === password
     ))
 
-    if (user && user.role) {
+    if (user && user.role === 'admin') {
         alert('Đăng nhập thành công');
         window.location.href = 'dashboard.html';
         return;

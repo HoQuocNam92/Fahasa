@@ -24,6 +24,7 @@ async function fetchAPI() {
         <div class="text-progress-bar">
         <div class="text-progress">
         <p>
+        Đã bán
         ${item.soluong}
         </p>
         </div>

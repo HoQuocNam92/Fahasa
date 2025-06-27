@@ -15,6 +15,7 @@
     background-color: #fff;
     height: auto;
     margin-top: 16px;
+
 }
 
 #sidebar .title {
@@ -99,26 +100,7 @@
 
 
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(206px, 1fr));
-    grid-template-rows: max-content;
-    gap: 18px;
-    padding: 14px;
-    background-color: #FFF;
-}
 
-.product {
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    transition: all 0.1s ease-in-out;
-    width: 100%;
-    background-color: #FFF;
-}
 
 .product:hover {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);

@@ -33,12 +33,19 @@ fetchDB("nhanvien");
 
 const form = (type) => {
     let obj = {}
+    console.log("Check typse", type)
     const formWrapper = document.querySelector(`.form-group[data-type="${type}"]`);
     const form = formWrapper.querySelector('form');
     const values = form.querySelectorAll('input');
     values.forEach((i) => {
+
         obj[i.id] = i.value;
     })
+    if (type === "sanpham") {
+        console.log("hello")
+        const imageArr = obj.image;
+        obj.image = imageArr.split(',')
+    }
     return obj;
 }
 
@@ -64,13 +71,13 @@ const getEmployees = async () => {
                             <td>${item.avatar}</td>
                             <td>${item.email}</td>
                             <td>${item.dob}</td>
-                            <td>${item.gender}</td>
                             <td>${item.phone}</td>
+                            <td>${item.gender}</td>
                             <td>${item.role}</td>
                             <td>${item.phongban}</td>
                             <td>${item.ngayvaolam}</td>
                             <td>
-                            <i onclick="deleteCustomers('nhanvien','${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick="deleteHandle('nhanvien','${item.id}')" class="fa-solid fa-trash"></i>
 
                             <i onclick='handleOpen("nhanvien",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
@@ -97,18 +104,17 @@ const getProducts = async () => {
             `
                             <td>${item.id}</td>
                             <td>${item.masp}</td>
-                            <td>${item.tensp}</td>
-                            <td>${item.image}</td>
+                            <td width="300px">${item.tensp}</td>
+                            <td><img width="100px" src="${item.image[0]}"></td>
                             <td>${item.mota}</td>
-                            <td>${formatMoney(item.gia)}</td>
-                            <td>${item.soluong}</td>
+                            <td width="100px" >${formatMoney(item.gia)}</td>
+                            <td width="120px" >${item.soluong}</td>
                             <td>${item.danhmuc}</td>
                             <td>${item.nhacc}</td>
-                            <td>${item.ngaytao}</td>
-                            <td>
-                            <i onclick="deleteCustomers('${item.id}')" class="fa-solid fa-trash"></i>
-
-                            <i onclick='openForm("sanpham",${JSON.stringify(item)})'   class="fa-solid fa-pen">
+                            <td width="150px" > ${item.ngaytao}</td>
+                            <td width="120px">
+                            <i onclick="deleteHandle('sanpham','${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick='handleOpen("sanpham",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
                             </td>
             `
@@ -142,9 +148,8 @@ const getCustomer = async () => {
                             <td>${item.ngaydangky}</td>
                             <td>${item.trangthai}</td>
                             <td>
-                            <i onclick="deleteCustomers('${item.id}')" class="fa-solid fa-trash"></i>
-
-                            <i onclick='openForm("khachhang",${JSON.stringify(item)})'   class="fa-solid fa-pen">
+                            <i onclick="deleteHandle('khachhang','${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick='handleOpen("khachhang",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
                             </td>
             `
@@ -177,9 +182,9 @@ const getOrders = async () => {
                             <td>${item.trangthai}</td>
                             <td>${formatMoney(item.tongtien)}</td>
                             <td>
-                            <i onclick="deleteCustomers('${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick="deleteHandle('donhang','${item.id}')" class="fa-solid fa-trash"></i>
 
-                            <i onclick='openForm("donhang",${JSON.stringify(item)})'   class="fa-solid fa-pen">
+                            <i onclick='handleOpen("donhang",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
                             </td>
             `
@@ -214,9 +219,9 @@ const getSalary = async () => {
                             <td>${formatMoney(item.khautru)}</td>
                             <td>${formatMoney(item.thucnhan)}</td>
                             <td>
-                            <i onclick="deleteCustomers('${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick="deleteHandle('luong','${item.id}')" class="fa-solid fa-trash"></i>
 
-                            <i onclick='openForm("luong",${JSON.stringify(item)})'   class="fa-solid fa-pen">
+                            <i onclick='handleOpen("luong",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
                             </td>
             `
@@ -248,9 +253,9 @@ const getRevenues = async () => {
                             <td>${item.tysuat}</td>
                             <td>${item.chitiet}</td>
                             <td>
-                            <i onclick="deleteCustomers('${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick="deleteHandle('doanhthu','${item.id}')" class="fa-solid fa-trash"></i>
 
-                            <i onclick='openForm("doanhthu",${JSON.stringify(item)})'   class="fa-solid fa-pen">
+                            <i onclick='handleOpen("doanhthu",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
                             </td>
             `
@@ -284,9 +289,9 @@ const getCalendar = async () => {
                             <td>${item.ghichu}</td>
                             <td>${item.trangthai}</td>
                             <td>
-                            <i onclick="deleteCustomers('${item.id}')" class="fa-solid fa-trash"></i>
+                            <i onclick="deleteHandle('lichtrinh','${item.id}')" class="fa-solid fa-trash"></i>
 
-                            <i onclick='openForm("lichtrinh",${JSON.stringify(item)})'   class="fa-solid fa-pen">
+                            <i onclick='handleOpen("lichtrinh",${JSON.stringify(item)})'   class="fa-solid fa-pen">
                             </i>
                             </td>
             `
@@ -304,22 +309,17 @@ getCalendar();
 
 
 
-const deleteCustomers = async (type, id) => {
+const deleteHandle = async (type, id) => {
+    console.log("Check type", type)
+    console.log("Check id", id)
     const UrlNew = urls(type + '/' + String(id))
-    console.log("check UrlNew", UrlNew)
-    const option = {
-        method: "delete",
-        headers: {
-            "Content-Type": "application/json",
-        }
-    }
-    await fetch(UrlNew, option);
+    await fetch(UrlNew, option("DELETE"));
     const deleteItem = document.querySelector(`#customers-${id}`);
     deleteItem.remove();
     alert('Xóa thành công')
 }
 
-const updateCustomer = async (type) => {
+const updateHandle = async (type) => {
     const formWrapper = document.querySelector(`.form-group[data-type="${type}"]`);
     const forms = formWrapper.querySelector('form');
     const id = forms.dataset.id;
@@ -331,11 +331,11 @@ const updateCustomer = async (type) => {
 
 
 
-const createCustomer = async (type) => {
+const createHandle = async (type) => {
     const data = form(type);
     const url = urls(type);
     const res = await fetch(url, option("POST", data));
-    const result = await res.json();
+    await res.json();
 };
 
 
@@ -379,28 +379,35 @@ const openForm = (type) => {
 
 
 const handleOpen = (type, product) => {
-
-    openForm(type)
-
+    openForm(type);
+    console.log("check type", type)
     const formWrapper = document.querySelector(`.form-group[data-type="${type}"]`);
+    const title = formWrapper.querySelector('.title span');
+
     const form = formWrapper.querySelector('form');
+
     if (!product) {
+        title.textContent = 'Thêm'
+
         const values = form.querySelectorAll('input');
         values.forEach((i) => {
             i.value = "";
         })
-        document.querySelector('#updateBtn').style.display = 'none'
+        document.querySelector(`.form-group[data-type="${type}"] .submitBtn`).style.display = 'block'
+        document.querySelector(`.form-group[data-type="${type}"] .updateBtn`).style.display = 'none'
 
     }
     else {
+        title.textContent = 'Sửa'
+
         for (let key in product) {
             const input = form.querySelector(`#${key}`);
 
             if (input) input.value = product[key];
         }
         form.dataset.id = product.id;
-        document.querySelector('#submitBtn').style.display = 'none'
-        document.querySelector('#updateBtn').style.display = 'block'
+        document.querySelector(`.form-group[data-type="${type}"] .submitBtn`).style.display = 'none'
+        document.querySelector(`.form-group[data-type="${type}"] .updateBtn`).style.display = 'block'
     }
 
 }
@@ -448,6 +455,7 @@ function closePopup(type = "type") {
 const option = (method, data) => {
     return {
         method: method,
+
         headers: {
             "Content-Type": "application/json",
         },

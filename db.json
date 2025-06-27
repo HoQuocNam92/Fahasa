@@ -1,8 +1,15 @@
 {
-  "nhanvien": [],
+  "nhanvien": [
+    {
+      "id": "394e",
+      "username": "admin",
+      "email": "hoquocnam92@gmail.com",
+      "password": "hoquocnamA2@",
+      "role": "admin"
+    }
+  ],
   "sanpham": [
     {
-      "id": "1",
       "masp": "SP001",
       "tensp": "Hoa Học Trò - Số 1459 - Bạn Có Hẹn Với Anh Trai HURRYKNG,WEANLÊ Và CAPTAIN BOY!",
       "image": [
@@ -14,13 +21,14 @@
       ],
       "mota": "Tạp chí tuổi teen nổi tiếng",
       "gia": "20000",
-      "soluong": "Sắp hết",
-      "danhmuc": "Tạp chí",
+      "soluong": "122",
       "nhacc": "Fahasa",
-      "ngaytao": "2024-05-01"
+      "danhmuc": "Tạp chí",
+      "ngaytao": "2024-05-01",
+      "edit-product-id": "",
+      "id": "1"
     },
     {
-      "id": "2",
       "masp": "SP002",
       "tensp": "Búp Sen Xanh - Bìa Cứng - Tặng Kèm Obi + Postcard",
       "image": [
@@ -32,13 +40,14 @@
       ],
       "mota": "Tiểu sử Chủ tịch Hồ Chí Minh",
       "gia": "110000",
-      "soluong": "Sắp hết",
-      "danhmuc": "Sách lịch sử",
+      "soluong": "414",
       "nhacc": "NXB Trẻ",
-      "ngaytao": "2024-04-15"
+      "danhmuc": "Sách lịch sử",
+      "ngaytao": "2024-04-15",
+      "edit-product-id": "",
+      "id": "2"
     },
     {
-      "id": "3",
       "masp": "SP003",
       "tensp": "Cánh Chim Bất Tử - Nguyễn Văn Bảy",
       "image": [
@@ -50,13 +59,14 @@
       ],
       "mota": "Câu chuyện người phi công huyền thoại",
       "gia": "136000",
-      "soluong": "Đã bán 134",
-      "danhmuc": "Sách truyền cảm hứng",
+      "soluong": "14",
       "nhacc": "NXB Tổng hợp",
-      "ngaytao": "2024-03-20"
+      "danhmuc": "Sách truyền cảm hứng",
+      "ngaytao": "2024-03-20",
+      "edit-product-id": "",
+      "id": "3"
     },
     {
-      "id": "4",
       "masp": "SP004",
       "tensp": "Manifest - 7 Bước Để Thay Đổi Cuộc Đời",
       "image": [
@@ -68,31 +78,14 @@
       ],
       "mota": "Phát triển bản thân và động lực sống",
       "gia": "109000",
-      "soluong": "Đã bán 46",
-      "danhmuc": "Sách kỹ năng",
+      "soluong": "132",
       "nhacc": "NXB Kim Đồng",
-      "ngaytao": "2024-06-10"
+      "danhmuc": "Sách kỹ năng",
+      "ngaytao": "2024-06-10",
+      "edit-product-id": "",
+      "id": "4"
     },
     {
-      "id": "5",
-      "masp": "SP005",
-      "tensp": "Life BRE A2-B1 - Student's Book",
-      "image": [
-        "image/product5.webp",
-        "image/product5-1.webp",
-        "image/product5-2.webp",
-        "image/product5-3.webp",
-        "image/product5-4.webp"
-      ],
-      "mota": "Giáo trình tiếng Anh cơ bản",
-      "gia": "246000",
-      "soluong": "Sắp hết",
-      "danhmuc": "Giáo trình",
-      "nhacc": "National Geographic",
-      "ngaytao": "2024-05-28"
-    },
-    {
-      "id": "6",
       "masp": "SP006",
       "tensp": "Đồ Chơi Minecraft - Nano Metalfigs",
       "image": [
@@ -104,13 +97,14 @@
       ],
       "mota": "Mô hình Minecraft sưu tầm",
       "gia": "59000",
-      "soluong": "Đã bán 3",
-      "danhmuc": "Đồ chơi",
+      "soluong": "312",
       "nhacc": "Jada Toys",
-      "ngaytao": "2024-05-01"
+      "danhmuc": "Đồ chơi",
+      "ngaytao": "2024-05-01",
+      "edit-product-id": "",
+      "id": "6"
     },
     {
-      "id": "7",
       "masp": "SP007",
       "tensp": "Pop Mart - Skullpanda The Mirage",
       "image": [
@@ -122,13 +116,14 @@
       ],
       "mota": "Mô hình phiên bản giới hạn",
       "gia": "380000",
-      "soluong": "Đã bán 0",
-      "danhmuc": "Đồ chơi mô hình",
+      "soluong": "131",
       "nhacc": "Pop Mart",
-      "ngaytao": "2024-06-01"
+      "danhmuc": "Đồ chơi mô hình",
+      "ngaytao": "2024-06-01",
+      "edit-product-id": "",
+      "id": "7"
     },
     {
-      "id": "8",
       "masp": "SP008",
       "tensp": "Ba Lô Fancy Du Hành Vũ Trụ",
       "image": [
@@ -140,13 +135,14 @@
       ],
       "mota": "Ba lô Clever Hippo BS1236/BLUE",
       "gia": "815000",
-      "soluong": "Đã bán 99",
-      "danhmuc": "Ba lô",
+      "soluong": "5",
       "nhacc": "Clever Hippo",
-      "ngaytao": "2024-05-18"
+      "danhmuc": "Ba lô",
+      "ngaytao": "2024-05-18",
+      "edit-product-id": "",
+      "id": "8"
     },
     {
-      "id": "9",
       "masp": "SP009",
       "tensp": "Pop Mart - Skullpanda The Mirage (Ver2)",
       "image": [
@@ -157,15 +153,16 @@
         "image/product9-4.webp"
       ],
       "mota": "Phiên bản 2 của dòng mô hình Skullpanda",
-      "gia": "412000",
-      "soluong": "Đã bán 0",
-      "danhmuc": "Mô hình",
+      "gia": "120000",
+      "soluong": "131",
       "nhacc": "Pop Mart",
-      "ngaytao": "2024-06-05"
+      "danhmuc": "Mô hình",
+      "ngaytao": "2024-06-05",
+      "edit-product-id": "",
+      "id": "9"
     },
     {
-      "id": "10",
-      "masp": "SP010",
+      "masp": "SP0010",
       "tensp": "Hoàng Tử Bé (Song Ngữ Việt-Anh)",
       "image": [
         "image/product10.webp",
@@ -174,12 +171,32 @@
         "image/product10-3.webp",
         "image/product10-4.webp"
       ],
-      "mota": "Tác phẩm kinh điển song ngữ",
-      "gia": "55300",
-      "soluong": "Đã bán 13",
-      "danhmuc": "Văn học thiếu nhi",
-      "nhacc": "NXB Kim Đồng",
-      "ngaytao": "2024-04-22"
+      "mota": "Phiên bản 2 của dòng mô hình Skullpanda\t",
+      "gia": "55000",
+      "soluong": "211",
+      "nhacc": "Fahasha",
+      "danhmuc": "Tạp chí",
+      "ngaytao": "2025-06-18",
+      "edit-product-id": "",
+      "id": "5d1f"
+    },
+    {
+      "masp": "SP009",
+      "tensp": "Minh Triết Trong Ăn Uống Của Phương Đông (Tái Bản 2023)",
+      "image": [
+        "image/product9.webp",
+        "image/product9-1.webp",
+        "image/product9-2.webp",
+        "image/product9-3.webp"
+      ],
+      "mota": "Tạp chí tuổi teen",
+      "gia": "123000",
+      "soluong": "312",
+      "nhacc": "Fahasha",
+      "danhmuc": "Tạp chí",
+      "ngaytao": "2025-06-23",
+      "edit-product-id": "",
+      "id": "cb38"
     }
   ],
   "khachhang": [
@@ -193,17 +210,6 @@
       "diachi": "123 Nguyễn Trãi, Q1, TP.HCM",
       "ngaydangky": "2024-11-10",
       "trangthai": "Hoạt động"
-    },
-    {
-      "id": "2",
-      "makh": "KH002",
-      "hoten": "Phạm Thị Hoa",
-      "email": "hoa.pham@gmail.com",
-      "sdt": "0987654321",
-      "gioitinh": "Nữ",
-      "diachi": "45 Hoàng Văn Thụ, Hà Nội",
-      "ngaydangky": "2024-12-05",
-      "trangthai": "Tạm khóa"
     }
   ],
   "donhang": [
@@ -217,17 +223,6 @@
       "diachigiaohang": "123 Nguyễn Trãi, Q1, TP.HCM",
       "tongtien": 250000,
       "trangthai": "Chờ giao hàng"
-    },
-    {
-      "id": "2",
-      "madh": "DH002",
-      "khachhang": "Phạm Thị Hoa",
-      "nhanvien": "Trần Thị B",
-      "ngaydat": "2025-06-03",
-      "ngaygiao": "2025-06-05",
-      "diachigiaohang": "45 Hoàng Văn Thụ, Hà Nội",
-      "tongtien": 85000,
-      "trangthai": "Đã giao"
     }
   ],
   "luong": [
@@ -244,16 +239,17 @@
       "thucnhan": 8200000
     },
     {
-      "id": "2",
       "manv": "NV002",
       "hoten": "Trần Thị B",
-      "chucvu": "Quản lý kho",
+      "chucvu": "Quản lý khoa",
       "thang": "05/2025",
-      "luongcoban": 8500000,
-      "phucap": 600000,
-      "thuong": 0,
-      "khautru": 200000,
-      "thucnhan": 8900000
+      "luongcoban": "8500000",
+      "phucap": "600000",
+      "thuong": "0",
+      "khautru": "200000",
+      "thucnhan": "8900000",
+      "edit-salary-id": "",
+      "id": "2"
     }
   ],
   "doanhthu": [
@@ -266,16 +262,6 @@
       "chiphi": 8000000,
       "tysuat": "26.6%",
       "chitiet": "Chi tiết tháng 5"
-    },
-    {
-      "id": "2",
-      "thoigian": "06/2025",
-      "tongdon": 175,
-      "tongdoanhthu": 56000000,
-      "loinhuan": 15000000,
-      "chiphi": 9000000,
-      "tysuat": "26.7%",
-      "chitiet": "Chi tiết tháng 6"
     }
   ],
   "lichtrinh": [
@@ -289,17 +275,6 @@
       "diadiem": "Hà Nội",
       "ghichu": "Giao sách cho đại lý",
       "trangthai": "Chưa thực hiện"
-    },
-    {
-      "id": "2",
-      "malt": "LT002",
-      "tieude": "Họp phòng kinh doanh",
-      "nhanvien": "Nguyễn Văn A",
-      "ngaybatdau": "2025-06-23",
-      "ngayketthuc": "2025-06-23",
-      "diadiem": "Văn phòng HCM",
-      "ghichu": "Báo cáo quý 2",
-      "trangthai": "Đã xong"
     }
   ]
 }

@@ -1,0 +1,28 @@
+@media (max-width: 600px) {
+
+    #sidebar {
+        display: none !important;
+    }
+
+    .wrapper .content {
+        display: block !important;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    #main-content,
+    #main-content2 {
+        margin: 0 !important;
+    }
+
+    .products {
+        gap: 10px !important;
+        padding: 8 !important;
+    }
+
+    .product .info-image {
+        width: 100% !important;
+    }
+}

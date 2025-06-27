@@ -1,36 +1,9 @@
 @media (max-width: 600px) {
-    .header__banner img {
-        display: none !important;
-    }
-
-    .banner {
-        height: auto !important;
-    }
-
-    .banner-image,
-    .header__logo {
-        display: none !important;
-    }
-
-    .icon-noti {
-        display: none !important;
-    }
-
-    .search i {
-        display: none !important;
-    }
-
-    .header__icons {
-        width: 58px !important;
-
-    }
 
     .options {
         grid-template-columns: repeat(5, 1fr) !important;
         font-size: 12px !important;
     }
-
-    .product-layout {}
 
     .products {
         grid-template-columns: repeat(2, 1fr) !important;
@@ -38,16 +11,7 @@
         background-color: #F0F0F0 !important;
     }
 
-    .header__icons i {
-        font-size: 22px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
 
-    .icon-user p,
-    .icon-cart p {
-        display: none !important;
-    }
 
     .product .info-image {
         width: 158px !important;
